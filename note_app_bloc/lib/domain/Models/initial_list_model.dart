@@ -8,7 +8,7 @@ part 'initial_list_model.freezed.dart';
 class InitialListModel with _$InitialListModel{
   const factory InitialListModel({
     @HiveField(0)
-    int? noteId,
+    required int noteId,
     @HiveField(1)
     required String noteDate,
     @HiveField(2)

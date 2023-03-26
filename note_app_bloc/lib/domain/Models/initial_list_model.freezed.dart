@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$InitialListModel {
   @HiveField(0)
-  int? get noteId => throw _privateConstructorUsedError;
+  int get noteId => throw _privateConstructorUsedError;
   @HiveField(1)
   String get noteDate => throw _privateConstructorUsedError;
   @HiveField(2)
@@ -37,7 +37,7 @@ abstract class $InitialListModelCopyWith<$Res> {
       _$InitialListModelCopyWithImpl<$Res, InitialListModel>;
   @useResult
   $Res call(
-      {@HiveField(0) int? noteId,
+      {@HiveField(0) int noteId,
       @HiveField(1) String noteDate,
       @HiveField(2) String noteTitle,
       @HiveField(3) String noteDescription});
@@ -56,16 +56,16 @@ class _$InitialListModelCopyWithImpl<$Res, $Val extends InitialListModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? noteId = freezed,
+    Object? noteId = null,
     Object? noteDate = null,
     Object? noteTitle = null,
     Object? noteDescription = null,
   }) {
     return _then(_value.copyWith(
-      noteId: freezed == noteId
+      noteId: null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       noteDate: null == noteDate
           ? _value.noteDate
           : noteDate // ignore: cast_nullable_to_non_nullable
@@ -91,7 +91,7 @@ abstract class _$$_InitialListModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@HiveField(0) int? noteId,
+      {@HiveField(0) int noteId,
       @HiveField(1) String noteDate,
       @HiveField(2) String noteTitle,
       @HiveField(3) String noteDescription});
@@ -108,16 +108,16 @@ class __$$_InitialListModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? noteId = freezed,
+    Object? noteId = null,
     Object? noteDate = null,
     Object? noteTitle = null,
     Object? noteDescription = null,
   }) {
     return _then(_$_InitialListModel(
-      noteId: freezed == noteId
+      noteId: null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       noteDate: null == noteDate
           ? _value.noteDate
           : noteDate // ignore: cast_nullable_to_non_nullable
@@ -138,14 +138,14 @@ class __$$_InitialListModelCopyWithImpl<$Res>
 
 class _$_InitialListModel implements _InitialListModel {
   const _$_InitialListModel(
-      {@HiveField(0) this.noteId,
+      {@HiveField(0) required this.noteId,
       @HiveField(1) required this.noteDate,
       @HiveField(2) required this.noteTitle,
       @HiveField(3) required this.noteDescription});
 
   @override
   @HiveField(0)
-  final int? noteId;
+  final int noteId;
   @override
   @HiveField(1)
   final String noteDate;
@@ -188,7 +188,7 @@ class _$_InitialListModel implements _InitialListModel {
 
 abstract class _InitialListModel implements InitialListModel {
   const factory _InitialListModel(
-          {@HiveField(0) final int? noteId,
+          {@HiveField(0) required final int noteId,
           @HiveField(1) required final String noteDate,
           @HiveField(2) required final String noteTitle,
           @HiveField(3) required final String noteDescription}) =
@@ -196,7 +196,7 @@ abstract class _InitialListModel implements InitialListModel {
 
   @override
   @HiveField(0)
-  int? get noteId;
+  int get noteId;
   @override
   @HiveField(1)
   String get noteDate;

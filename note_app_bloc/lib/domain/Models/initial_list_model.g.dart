@@ -17,7 +17,7 @@ class InitialListModelAdapter extends TypeAdapter<InitialListModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return InitialListModel(
-      noteId: fields[0] as int?,
+      noteId: fields[0] as int,
       noteDate: fields[1] as String,
       noteTitle: fields[2] as String,
       noteDescription: fields[3] as String,

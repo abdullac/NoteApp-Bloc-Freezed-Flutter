@@ -16,20 +16,19 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$InitialListEvent {
-  InitialListModel get initialListModel => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(InitialListModel initialListModel) initialList,
+    required TResult Function() initialList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(InitialListModel initialListModel)? initialList,
+    TResult? Function()? initialList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(InitialListModel initialListModel)? initialList,
+    TResult Function()? initialList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,10 +48,6 @@ mixin _$InitialListEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $InitialListEventCopyWith<InitialListEvent> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -60,10 +55,6 @@ abstract class $InitialListEventCopyWith<$Res> {
   factory $InitialListEventCopyWith(
           InitialListEvent value, $Res Function(InitialListEvent) then) =
       _$InitialListEventCopyWithImpl<$Res, InitialListEvent>;
-  @useResult
-  $Res call({InitialListModel initialListModel});
-
-  $InitialListModelCopyWith<$Res> get initialListModel;
 }
 
 /// @nodoc
@@ -75,41 +66,13 @@ class _$InitialListEventCopyWithImpl<$Res, $Val extends InitialListEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? initialListModel = null,
-  }) {
-    return _then(_value.copyWith(
-      initialListModel: null == initialListModel
-          ? _value.initialListModel
-          : initialListModel // ignore: cast_nullable_to_non_nullable
-              as InitialListModel,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $InitialListModelCopyWith<$Res> get initialListModel {
-    return $InitialListModelCopyWith<$Res>(_value.initialListModel, (value) {
-      return _then(_value.copyWith(initialListModel: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$$InitialListCopyWith<$Res>
-    implements $InitialListEventCopyWith<$Res> {
+abstract class _$$InitialListCopyWith<$Res> {
   factory _$$InitialListCopyWith(
           _$InitialList value, $Res Function(_$InitialList) then) =
       __$$InitialListCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({InitialListModel initialListModel});
-
-  @override
-  $InitialListModelCopyWith<$Res> get initialListModel;
 }
 
 /// @nodoc
@@ -119,76 +82,51 @@ class __$$InitialListCopyWithImpl<$Res>
   __$$InitialListCopyWithImpl(
       _$InitialList _value, $Res Function(_$InitialList) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? initialListModel = null,
-  }) {
-    return _then(_$InitialList(
-      initialListModel: null == initialListModel
-          ? _value.initialListModel
-          : initialListModel // ignore: cast_nullable_to_non_nullable
-              as InitialListModel,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$InitialList implements InitialList {
-  const _$InitialList({required this.initialListModel});
-
-  @override
-  final InitialListModel initialListModel;
+  const _$InitialList();
 
   @override
   String toString() {
-    return 'InitialListEvent.initialList(initialListModel: $initialListModel)';
+    return 'InitialListEvent.initialList()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InitialList &&
-            (identical(other.initialListModel, initialListModel) ||
-                other.initialListModel == initialListModel));
+        (other.runtimeType == runtimeType && other is _$InitialList);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, initialListModel);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InitialListCopyWith<_$InitialList> get copyWith =>
-      __$$InitialListCopyWithImpl<_$InitialList>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(InitialListModel initialListModel) initialList,
+    required TResult Function() initialList,
   }) {
-    return initialList(initialListModel);
+    return initialList();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(InitialListModel initialListModel)? initialList,
+    TResult? Function()? initialList,
   }) {
-    return initialList?.call(initialListModel);
+    return initialList?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(InitialListModel initialListModel)? initialList,
+    TResult Function()? initialList,
     required TResult orElse(),
   }) {
     if (initialList != null) {
-      return initialList(initialListModel);
+      return initialList();
     }
     return orElse();
   }
@@ -223,22 +161,13 @@ class _$InitialList implements InitialList {
 }
 
 abstract class InitialList implements InitialListEvent {
-  const factory InitialList(
-      {required final InitialListModel initialListModel}) = _$InitialList;
-
-  @override
-  InitialListModel get initialListModel;
-  @override
-  @JsonKey(ignore: true)
-  _$$InitialListCopyWith<_$InitialList> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory InitialList() = _$InitialList;
 }
 
 /// @nodoc
 mixin _$InitialListState {
-  String get date => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  List<InitialListModel> get initialListModelList =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $InitialListStateCopyWith<InitialListState> get copyWith =>
@@ -251,7 +180,7 @@ abstract class $InitialListStateCopyWith<$Res> {
           InitialListState value, $Res Function(InitialListState) then) =
       _$InitialListStateCopyWithImpl<$Res, InitialListState>;
   @useResult
-  $Res call({String date, String title, String description});
+  $Res call({List<InitialListModel> initialListModelList});
 }
 
 /// @nodoc
@@ -267,23 +196,13 @@ class _$InitialListStateCopyWithImpl<$Res, $Val extends InitialListState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? date = null,
-    Object? title = null,
-    Object? description = null,
+    Object? initialListModelList = null,
   }) {
     return _then(_value.copyWith(
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
+      initialListModelList: null == initialListModelList
+          ? _value.initialListModelList
+          : initialListModelList // ignore: cast_nullable_to_non_nullable
+              as List<InitialListModel>,
     ) as $Val);
   }
 }
@@ -296,7 +215,7 @@ abstract class _$$_InitialListStateCopyWith<$Res>
       __$$_InitialListStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String date, String title, String description});
+  $Res call({List<InitialListModel> initialListModelList});
 }
 
 /// @nodoc
@@ -310,23 +229,13 @@ class __$$_InitialListStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? date = null,
-    Object? title = null,
-    Object? description = null,
+    Object? initialListModelList = null,
   }) {
     return _then(_$_InitialListState(
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
+      initialListModelList: null == initialListModelList
+          ? _value._initialListModelList
+          : initialListModelList // ignore: cast_nullable_to_non_nullable
+              as List<InitialListModel>,
     ));
   }
 }
@@ -335,18 +244,21 @@ class __$$_InitialListStateCopyWithImpl<$Res>
 
 class _$_InitialListState implements _InitialListState {
   const _$_InitialListState(
-      {required this.date, required this.title, required this.description});
+      {required final List<InitialListModel> initialListModelList})
+      : _initialListModelList = initialListModelList;
 
+  final List<InitialListModel> _initialListModelList;
   @override
-  final String date;
-  @override
-  final String title;
-  @override
-  final String description;
+  List<InitialListModel> get initialListModelList {
+    if (_initialListModelList is EqualUnmodifiableListView)
+      return _initialListModelList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_initialListModelList);
+  }
 
   @override
   String toString() {
-    return 'InitialListState(date: $date, title: $title, description: $description)';
+    return 'InitialListState(initialListModelList: $initialListModelList)';
   }
 
   @override
@@ -354,14 +266,13 @@ class _$_InitialListState implements _InitialListState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_InitialListState &&
-            (identical(other.date, date) || other.date == date) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description));
+            const DeepCollectionEquality()
+                .equals(other._initialListModelList, _initialListModelList));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, date, title, description);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_initialListModelList));
 
   @JsonKey(ignore: true)
   @override
@@ -372,16 +283,11 @@ class _$_InitialListState implements _InitialListState {
 
 abstract class _InitialListState implements InitialListState {
   const factory _InitialListState(
-      {required final String date,
-      required final String title,
-      required final String description}) = _$_InitialListState;
+          {required final List<InitialListModel> initialListModelList}) =
+      _$_InitialListState;
 
   @override
-  String get date;
-  @override
-  String get title;
-  @override
-  String get description;
+  List<InitialListModel> get initialListModelList;
   @override
   @JsonKey(ignore: true)
   _$$_InitialListStateCopyWith<_$_InitialListState> get copyWith =>
