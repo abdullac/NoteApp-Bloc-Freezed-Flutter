@@ -13,6 +13,8 @@ import 'package:note_app_bloc/apllication/list_page/update_item_button/update_it
 import 'package:note_app_bloc/domain/Models/initial_list_model.dart';
 import 'package:note_app_bloc/domain/list_page/initial_list.dart';
 
+import 'presentation/list_items_page/list_items_page.dart';
+
 List<InitialListModel> initialListModelList = [];
 
 main() {
@@ -43,10 +45,7 @@ class MyApp extends StatelessWidget {
       child: const MaterialApp(
         home: Scaffold(
           body: SafeArea(
-            // child: InitalListView(),
-            child: AddUpdatePage(),
-            // child: DeleteAllPage(),
-            // child: GoAddOrUpdatePage(),
+            child: ListItemsPage(),
           ),
         ),
       ),
