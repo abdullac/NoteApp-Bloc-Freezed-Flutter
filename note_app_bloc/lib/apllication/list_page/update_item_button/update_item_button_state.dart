@@ -1,14 +1,14 @@
 part of 'update_item_button_bloc.dart';
 
 @freezed
-class UpdateItemButtonState with _$UpdateItemButtonState {
-  const factory UpdateItemButtonState({
-    required Widget? updatePageWidget,
-  }) = _UpdateItemButtonState;
+class EditItemButtonState with _$EditItemButtonState {
+  const factory EditItemButtonState({
+    required Widget? editPageWidget,
+  }) = _EditItemButtonState;
 
-  factory UpdateItemButtonState.initial() {
-    return const UpdateItemButtonState(
-      updatePageWidget: null,
+  factory EditItemButtonState.initial() {
+    return const EditItemButtonState(
+      editPageWidget: null,
     );
   }
 }

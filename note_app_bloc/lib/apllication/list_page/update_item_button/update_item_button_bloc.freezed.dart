@@ -15,61 +15,60 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$UpdateItemButtonEvent {
+mixin _$EditItemButtonEvent {
   String get title => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String title, String description) gotoUpdatePage,
+    required TResult Function(String title, String description) gotoEditPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String title, String description)? gotoUpdatePage,
+    TResult? Function(String title, String description)? gotoEditPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String title, String description)? gotoUpdatePage,
+    TResult Function(String title, String description)? gotoEditPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GotoUpdatePage value) gotoUpdatePage,
+    required TResult Function(GotoEditPage value) gotoEditPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GotoUpdatePage value)? gotoUpdatePage,
+    TResult? Function(GotoEditPage value)? gotoEditPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GotoUpdatePage value)? gotoUpdatePage,
+    TResult Function(GotoEditPage value)? gotoEditPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UpdateItemButtonEventCopyWith<UpdateItemButtonEvent> get copyWith =>
+  $EditItemButtonEventCopyWith<EditItemButtonEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UpdateItemButtonEventCopyWith<$Res> {
-  factory $UpdateItemButtonEventCopyWith(UpdateItemButtonEvent value,
-          $Res Function(UpdateItemButtonEvent) then) =
-      _$UpdateItemButtonEventCopyWithImpl<$Res, UpdateItemButtonEvent>;
+abstract class $EditItemButtonEventCopyWith<$Res> {
+  factory $EditItemButtonEventCopyWith(
+          EditItemButtonEvent value, $Res Function(EditItemButtonEvent) then) =
+      _$EditItemButtonEventCopyWithImpl<$Res, EditItemButtonEvent>;
   @useResult
   $Res call({String title, String description});
 }
 
 /// @nodoc
-class _$UpdateItemButtonEventCopyWithImpl<$Res,
-        $Val extends UpdateItemButtonEvent>
-    implements $UpdateItemButtonEventCopyWith<$Res> {
-  _$UpdateItemButtonEventCopyWithImpl(this._value, this._then);
+class _$EditItemButtonEventCopyWithImpl<$Res, $Val extends EditItemButtonEvent>
+    implements $EditItemButtonEventCopyWith<$Res> {
+  _$EditItemButtonEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -96,22 +95,22 @@ class _$UpdateItemButtonEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$GotoUpdatePageCopyWith<$Res>
-    implements $UpdateItemButtonEventCopyWith<$Res> {
-  factory _$$GotoUpdatePageCopyWith(
-          _$GotoUpdatePage value, $Res Function(_$GotoUpdatePage) then) =
-      __$$GotoUpdatePageCopyWithImpl<$Res>;
+abstract class _$$GotoEditPageCopyWith<$Res>
+    implements $EditItemButtonEventCopyWith<$Res> {
+  factory _$$GotoEditPageCopyWith(
+          _$GotoEditPage value, $Res Function(_$GotoEditPage) then) =
+      __$$GotoEditPageCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String title, String description});
 }
 
 /// @nodoc
-class __$$GotoUpdatePageCopyWithImpl<$Res>
-    extends _$UpdateItemButtonEventCopyWithImpl<$Res, _$GotoUpdatePage>
-    implements _$$GotoUpdatePageCopyWith<$Res> {
-  __$$GotoUpdatePageCopyWithImpl(
-      _$GotoUpdatePage _value, $Res Function(_$GotoUpdatePage) _then)
+class __$$GotoEditPageCopyWithImpl<$Res>
+    extends _$EditItemButtonEventCopyWithImpl<$Res, _$GotoEditPage>
+    implements _$$GotoEditPageCopyWith<$Res> {
+  __$$GotoEditPageCopyWithImpl(
+      _$GotoEditPage _value, $Res Function(_$GotoEditPage) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -120,7 +119,7 @@ class __$$GotoUpdatePageCopyWithImpl<$Res>
     Object? title = null,
     Object? description = null,
   }) {
-    return _then(_$GotoUpdatePage(
+    return _then(_$GotoEditPage(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -135,8 +134,8 @@ class __$$GotoUpdatePageCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$GotoUpdatePage implements GotoUpdatePage {
-  const _$GotoUpdatePage({required this.title, required this.description});
+class _$GotoEditPage implements GotoEditPage {
+  const _$GotoEditPage({required this.title, required this.description});
 
   @override
   final String title;
@@ -145,14 +144,14 @@ class _$GotoUpdatePage implements GotoUpdatePage {
 
   @override
   String toString() {
-    return 'UpdateItemButtonEvent.gotoUpdatePage(title: $title, description: $description)';
+    return 'EditItemButtonEvent.gotoEditPage(title: $title, description: $description)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GotoUpdatePage &&
+            other is _$GotoEditPage &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description));
@@ -164,33 +163,33 @@ class _$GotoUpdatePage implements GotoUpdatePage {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GotoUpdatePageCopyWith<_$GotoUpdatePage> get copyWith =>
-      __$$GotoUpdatePageCopyWithImpl<_$GotoUpdatePage>(this, _$identity);
+  _$$GotoEditPageCopyWith<_$GotoEditPage> get copyWith =>
+      __$$GotoEditPageCopyWithImpl<_$GotoEditPage>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String title, String description) gotoUpdatePage,
+    required TResult Function(String title, String description) gotoEditPage,
   }) {
-    return gotoUpdatePage(title, description);
+    return gotoEditPage(title, description);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String title, String description)? gotoUpdatePage,
+    TResult? Function(String title, String description)? gotoEditPage,
   }) {
-    return gotoUpdatePage?.call(title, description);
+    return gotoEditPage?.call(title, description);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String title, String description)? gotoUpdatePage,
+    TResult Function(String title, String description)? gotoEditPage,
     required TResult orElse(),
   }) {
-    if (gotoUpdatePage != null) {
-      return gotoUpdatePage(title, description);
+    if (gotoEditPage != null) {
+      return gotoEditPage(title, description);
     }
     return orElse();
   }
@@ -198,36 +197,36 @@ class _$GotoUpdatePage implements GotoUpdatePage {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GotoUpdatePage value) gotoUpdatePage,
+    required TResult Function(GotoEditPage value) gotoEditPage,
   }) {
-    return gotoUpdatePage(this);
+    return gotoEditPage(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GotoUpdatePage value)? gotoUpdatePage,
+    TResult? Function(GotoEditPage value)? gotoEditPage,
   }) {
-    return gotoUpdatePage?.call(this);
+    return gotoEditPage?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GotoUpdatePage value)? gotoUpdatePage,
+    TResult Function(GotoEditPage value)? gotoEditPage,
     required TResult orElse(),
   }) {
-    if (gotoUpdatePage != null) {
-      return gotoUpdatePage(this);
+    if (gotoEditPage != null) {
+      return gotoEditPage(this);
     }
     return orElse();
   }
 }
 
-abstract class GotoUpdatePage implements UpdateItemButtonEvent {
-  const factory GotoUpdatePage(
+abstract class GotoEditPage implements EditItemButtonEvent {
+  const factory GotoEditPage(
       {required final String title,
-      required final String description}) = _$GotoUpdatePage;
+      required final String description}) = _$GotoEditPage;
 
   @override
   String get title;
@@ -235,33 +234,32 @@ abstract class GotoUpdatePage implements UpdateItemButtonEvent {
   String get description;
   @override
   @JsonKey(ignore: true)
-  _$$GotoUpdatePageCopyWith<_$GotoUpdatePage> get copyWith =>
+  _$$GotoEditPageCopyWith<_$GotoEditPage> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$UpdateItemButtonState {
-  Widget? get updatePageWidget => throw _privateConstructorUsedError;
+mixin _$EditItemButtonState {
+  Widget? get editPageWidget => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UpdateItemButtonStateCopyWith<UpdateItemButtonState> get copyWith =>
+  $EditItemButtonStateCopyWith<EditItemButtonState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UpdateItemButtonStateCopyWith<$Res> {
-  factory $UpdateItemButtonStateCopyWith(UpdateItemButtonState value,
-          $Res Function(UpdateItemButtonState) then) =
-      _$UpdateItemButtonStateCopyWithImpl<$Res, UpdateItemButtonState>;
+abstract class $EditItemButtonStateCopyWith<$Res> {
+  factory $EditItemButtonStateCopyWith(
+          EditItemButtonState value, $Res Function(EditItemButtonState) then) =
+      _$EditItemButtonStateCopyWithImpl<$Res, EditItemButtonState>;
   @useResult
-  $Res call({Widget? updatePageWidget});
+  $Res call({Widget? editPageWidget});
 }
 
 /// @nodoc
-class _$UpdateItemButtonStateCopyWithImpl<$Res,
-        $Val extends UpdateItemButtonState>
-    implements $UpdateItemButtonStateCopyWith<$Res> {
-  _$UpdateItemButtonStateCopyWithImpl(this._value, this._then);
+class _$EditItemButtonStateCopyWithImpl<$Res, $Val extends EditItemButtonState>
+    implements $EditItemButtonStateCopyWith<$Res> {
+  _$EditItemButtonStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -271,45 +269,45 @@ class _$UpdateItemButtonStateCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? updatePageWidget = freezed,
+    Object? editPageWidget = freezed,
   }) {
     return _then(_value.copyWith(
-      updatePageWidget: freezed == updatePageWidget
-          ? _value.updatePageWidget
-          : updatePageWidget // ignore: cast_nullable_to_non_nullable
+      editPageWidget: freezed == editPageWidget
+          ? _value.editPageWidget
+          : editPageWidget // ignore: cast_nullable_to_non_nullable
               as Widget?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_UpdateItemButtonStateCopyWith<$Res>
-    implements $UpdateItemButtonStateCopyWith<$Res> {
-  factory _$$_UpdateItemButtonStateCopyWith(_$_UpdateItemButtonState value,
-          $Res Function(_$_UpdateItemButtonState) then) =
-      __$$_UpdateItemButtonStateCopyWithImpl<$Res>;
+abstract class _$$_EditItemButtonStateCopyWith<$Res>
+    implements $EditItemButtonStateCopyWith<$Res> {
+  factory _$$_EditItemButtonStateCopyWith(_$_EditItemButtonState value,
+          $Res Function(_$_EditItemButtonState) then) =
+      __$$_EditItemButtonStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Widget? updatePageWidget});
+  $Res call({Widget? editPageWidget});
 }
 
 /// @nodoc
-class __$$_UpdateItemButtonStateCopyWithImpl<$Res>
-    extends _$UpdateItemButtonStateCopyWithImpl<$Res, _$_UpdateItemButtonState>
-    implements _$$_UpdateItemButtonStateCopyWith<$Res> {
-  __$$_UpdateItemButtonStateCopyWithImpl(_$_UpdateItemButtonState _value,
-      $Res Function(_$_UpdateItemButtonState) _then)
+class __$$_EditItemButtonStateCopyWithImpl<$Res>
+    extends _$EditItemButtonStateCopyWithImpl<$Res, _$_EditItemButtonState>
+    implements _$$_EditItemButtonStateCopyWith<$Res> {
+  __$$_EditItemButtonStateCopyWithImpl(_$_EditItemButtonState _value,
+      $Res Function(_$_EditItemButtonState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? updatePageWidget = freezed,
+    Object? editPageWidget = freezed,
   }) {
-    return _then(_$_UpdateItemButtonState(
-      updatePageWidget: freezed == updatePageWidget
-          ? _value.updatePageWidget
-          : updatePageWidget // ignore: cast_nullable_to_non_nullable
+    return _then(_$_EditItemButtonState(
+      editPageWidget: freezed == editPageWidget
+          ? _value.editPageWidget
+          : editPageWidget // ignore: cast_nullable_to_non_nullable
               as Widget?,
     ));
   }
@@ -317,45 +315,45 @@ class __$$_UpdateItemButtonStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UpdateItemButtonState implements _UpdateItemButtonState {
-  const _$_UpdateItemButtonState({required this.updatePageWidget});
+class _$_EditItemButtonState implements _EditItemButtonState {
+  const _$_EditItemButtonState({required this.editPageWidget});
 
   @override
-  final Widget? updatePageWidget;
+  final Widget? editPageWidget;
 
   @override
   String toString() {
-    return 'UpdateItemButtonState(updatePageWidget: $updatePageWidget)';
+    return 'EditItemButtonState(editPageWidget: $editPageWidget)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UpdateItemButtonState &&
-            (identical(other.updatePageWidget, updatePageWidget) ||
-                other.updatePageWidget == updatePageWidget));
+            other is _$_EditItemButtonState &&
+            (identical(other.editPageWidget, editPageWidget) ||
+                other.editPageWidget == editPageWidget));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, updatePageWidget);
+  int get hashCode => Object.hash(runtimeType, editPageWidget);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UpdateItemButtonStateCopyWith<_$_UpdateItemButtonState> get copyWith =>
-      __$$_UpdateItemButtonStateCopyWithImpl<_$_UpdateItemButtonState>(
+  _$$_EditItemButtonStateCopyWith<_$_EditItemButtonState> get copyWith =>
+      __$$_EditItemButtonStateCopyWithImpl<_$_EditItemButtonState>(
           this, _$identity);
 }
 
-abstract class _UpdateItemButtonState implements UpdateItemButtonState {
-  const factory _UpdateItemButtonState(
-      {required final Widget? updatePageWidget}) = _$_UpdateItemButtonState;
+abstract class _EditItemButtonState implements EditItemButtonState {
+  const factory _EditItemButtonState({required final Widget? editPageWidget}) =
+      _$_EditItemButtonState;
 
   @override
-  Widget? get updatePageWidget;
+  Widget? get editPageWidget;
   @override
   @JsonKey(ignore: true)
-  _$$_UpdateItemButtonStateCopyWith<_$_UpdateItemButtonState> get copyWith =>
+  _$$_EditItemButtonStateCopyWith<_$_EditItemButtonState> get copyWith =>
       throw _privateConstructorUsedError;
 }

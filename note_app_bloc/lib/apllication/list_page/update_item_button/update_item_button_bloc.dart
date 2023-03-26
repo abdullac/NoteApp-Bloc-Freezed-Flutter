@@ -8,19 +8,19 @@ part 'update_item_button_event.dart';
 part 'update_item_button_state.dart';
 part 'update_item_button_bloc.freezed.dart';
 
-class UpdateItemButtonBloc
-    extends Bloc<UpdateItemButtonEvent, UpdateItemButtonState> {
-  UpdateItemButtonBloc() : super(UpdateItemButtonState.initial()) {
-    on<UpdateItemButtonEvent>((event, emit) {
+class EditItemButtonBloc
+    extends Bloc<EditItemButtonEvent, EditItemButtonState> {
+  EditItemButtonBloc() : super(EditItemButtonState.initial()) {
+    on<GotoEditPage>((event, emit) {
       emit(state.copyWith(
-        updatePageWidget: null,
+        editPageWidget: null,
       ));
-      Widget updatePageWidget = addOrUpdatePage(
+      Widget editPageWidget = addOrUpdatePage(
         event.title,
         event.description,
       );
       emit(state.copyWith(
-        updatePageWidget: updatePageWidget,
+        editPageWidget: editPageWidget,
       ));
     });
   }

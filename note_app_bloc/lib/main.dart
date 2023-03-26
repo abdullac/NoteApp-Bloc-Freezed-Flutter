@@ -2,12 +2,16 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:note_app_bloc/apllication/add_or_update_page/save_item_button/save_item_button_bloc.dart';
+import 'package:note_app_bloc/apllication/add_or_update_page/update_item_button/update_item_button_bloc.dart';
 import 'package:note_app_bloc/apllication/list_page/add_item_button/add_item_button_bloc.dart';
+import 'package:note_app_bloc/apllication/list_page/delete_all_button/delete_all_button_bloc.dart';
 import 'package:note_app_bloc/apllication/list_page/delete_item_button/delete_item_button_bloc.dart';
 import 'package:note_app_bloc/apllication/list_page/initial_list/initial_list_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:note_app_bloc/apllication/list_page/update_item_button/update_item_button_bloc.dart';
 import 'package:note_app_bloc/domain/Models/initial_list_model.dart';
+import 'package:note_app_bloc/domain/list_page/initial_list.dart';
 
 List<InitialListModel> initialListModelList = [];
 
@@ -30,14 +34,19 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => InitialListBloc()),
         BlocProvider(create: (context) => AddItemButtonBloc()),
-        BlocProvider(create: (context) => UpdateItemButtonBloc()),
+        BlocProvider(create: (context) => EditItemButtonBloc()),
         BlocProvider(create: (context) => DeleteItemButtonBloc()),
+        BlocProvider(create: (context) => DeleteAllButtonBloc()),
+        BlocProvider(create: (context) => SaveItemButtonBloc()),
+        BlocProvider(create: (context) => UpdateItemButtonBloc()),
       ],
       child: const MaterialApp(
         home: Scaffold(
           body: SafeArea(
-            child: InitalListView(),
-            // child: AddOrUpdatePage(),
+            // child: InitalListView(),
+            child: AddUpdatePage(),
+            // child: DeleteAllPage(),
+            // child: GoAddOrUpdatePage(),
           ),
         ),
       ),
@@ -45,25 +54,71 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class AddOrUpdatePage extends StatelessWidget {
-  const AddOrUpdatePage({super.key});
+class AddUpdatePage extends StatelessWidget {
+  const AddUpdatePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+
+
+
+      BlocProvider.of<UpdateItemButtonBloc>(context).add(UpdateItem(initialListModel: 
+       InitialListModel(
+        noteId: DateTime.now().microsecond,
+        noteDate: "noteDate2",
+        noteTitle: "noteTitle2",
+        noteDescription: "noteDescription3",
+      )));
+
+
+      // BlocProvider.of<SaveItemButtonBloc>(context).add(SaveItem(
+      //     initialListModel: InitialListModel(
+      //   noteId: DateTime.now().microsecondsSinceEpoch,
+      //   noteDate: "noteDate2",
+      //   noteTitle: "noteTitle2",
+      //   noteDescription: "noteDescription3",
+      // )));
+      List<InitialListModel> initialListModelList = [];
+      var hiveBox = await Hive.openBox<InitialListModel>(boxName);
+      initialListModelList.addAll(hiveBox.values);
+      print("AddUpdatePage ${initialListModelList}");
+    });
+    return const Placeholder();
+  }
+}
+
+class DeleteAllPage extends StatelessWidget {
+  const DeleteAllPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      BlocProvider.of<DeleteAllButtonBloc>(context).add(const DeleteAll());
+    });
+    return const Placeholder();
+  }
+}
+
+class GoAddOrUpdatePage extends StatelessWidget {
+  const GoAddOrUpdatePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       BlocProvider.of<AddItemButtonBloc>(context)
           .add(const GotoAddPage(isAdd: false));
-      BlocProvider.of<UpdateItemButtonBloc>(context)
-          .add(const GotoUpdatePage(title: "BBB", description: "bbbbbbb"));
+      BlocProvider.of<EditItemButtonBloc>(context)
+          .add(const GotoEditPage(title: "BBB", description: "bbbbbbb"));
     });
     return BlocBuilder<AddItemButtonBloc, AddItemButtonState>(
       builder: (contextAddButton, stateAddButton) {
         return stateAddButton.isAdd == true
             ? stateAddButton.addOrUpdateWidget ??
                 Container(width: 20, height: 30, color: Colors.pink)
-            : BlocBuilder<UpdateItemButtonBloc, UpdateItemButtonState>(
-                builder: (contextUpdateButton, stateUpdateButton) {
-                  return stateUpdateButton.updatePageWidget ??
+            : BlocBuilder<EditItemButtonBloc, EditItemButtonState>(
+                builder: (contextEditButton, stateEditButton) {
+                  return stateEditButton.editPageWidget ??
                       Container(
                         width: 10,
                         height: 40,
