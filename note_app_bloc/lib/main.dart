@@ -13,7 +13,9 @@ import 'package:note_app_bloc/apllication/list_page/update_item_button/update_it
 import 'package:note_app_bloc/domain/Models/initial_list_model.dart';
 import 'package:note_app_bloc/domain/list_page/initial_list.dart';
 
+import 'presentation/add_edit_item_page/add_edit_item_page.dart';
 import 'presentation/list_items_page/list_items_page.dart';
+import 'presentation/note_view_page/note_view_page.dart';
 
 List<InitialListModel> initialListModelList = [];
 
@@ -45,7 +47,18 @@ class MyApp extends StatelessWidget {
       child: const MaterialApp(
         home: Scaffold(
           body: SafeArea(
-            child: ListItemsPage(),
+            child: ListItemsPage(initialListModelList: [
+              InitialListModel(
+                noteId: 344345345,
+                noteDate: "noteDaterrrr",
+                noteTitle: "noteTitlerrrrr",
+                noteDescription: "noteDescriptionrrrr",
+              )
+            ]),
+            // child: AddEditItemPage(addOrEdit: AddOrEdit.editNote),
+            // child: NoteViewPage(
+            //     noteTitle: "gdgdgdgdgdgd",
+            //     noteDescription: "iuiuiuiuiuiuuiuiui"),
           ),
         ),
       ),
@@ -59,17 +72,13 @@ class AddUpdatePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-
-
-
-      BlocProvider.of<UpdateItemButtonBloc>(context).add(UpdateItem(initialListModel: 
-       InitialListModel(
+      BlocProvider.of<UpdateItemButtonBloc>(context).add(UpdateItem(
+          initialListModel: InitialListModel(
         noteId: DateTime.now().microsecond,
         noteDate: "noteDate2",
         noteTitle: "noteTitle2",
         noteDescription: "noteDescription3",
       )));
-
 
       // BlocProvider.of<SaveItemButtonBloc>(context).add(SaveItem(
       //     initialListModel: InitialListModel(
