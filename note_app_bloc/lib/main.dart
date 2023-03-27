@@ -7,9 +7,9 @@ import 'package:note_app_bloc/apllication/add_or_update_page/update_item_button/
 import 'package:note_app_bloc/apllication/list_page/add_item_button/add_item_button_bloc.dart';
 import 'package:note_app_bloc/apllication/list_page/delete_all_button/delete_all_button_bloc.dart';
 import 'package:note_app_bloc/apllication/list_page/delete_item_button/delete_item_button_bloc.dart';
+import 'package:note_app_bloc/apllication/list_page/edit_item_button/edit_item_button_bloc.dart';
 import 'package:note_app_bloc/apllication/list_page/initial_list/initial_list_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:note_app_bloc/apllication/list_page/update_item_button/update_item_button_bloc.dart';
 import 'package:note_app_bloc/domain/Models/initial_list_model.dart';
 import 'package:note_app_bloc/domain/list_page/initial_list.dart';
 
@@ -47,14 +47,7 @@ class MyApp extends StatelessWidget {
       child: const MaterialApp(
         home: Scaffold(
           body: SafeArea(
-            child: ListItemsPage(initialListModelList: [
-              InitialListModel(
-                noteId: 344345345,
-                noteDate: "noteDaterrrr",
-                noteTitle: "noteTitlerrrrr",
-                noteDescription: "noteDescriptionrrrr",
-              )
-            ]),
+            child: MainPageWidget(),
             // child: AddEditItemPage(addOrEdit: AddOrEdit.editNote),
             // child: NoteViewPage(
             //     noteTitle: "gdgdgdgdgdgd",
@@ -62,6 +55,39 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class MainPageWidget extends StatelessWidget {
+  const MainPageWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      BlocProvider.of<InitialListBloc>(context).add(const InitialList());
+    });
+    return BlocBuilder<DeleteAllButtonBloc, DeleteAllButtonState>(
+      builder: (context, state) {
+        BlocProvider.of<InitialListBloc>(context).add(const InitialList());
+        return state.afterDeleteAll != null
+            ? BlocBuilder<InitialListBloc, InitialListState>(
+                builder: (context, state) {
+                  print(state.initialListModelList);
+                  return ListItemsPage(
+                      initialListModelList: state.initialListModelList);
+                },
+              )
+            : BlocBuilder<InitialListBloc, InitialListState>(
+                builder: (context, state) {
+                  print(state.initialListModelList);
+                  return ListItemsPage(
+                      initialListModelList: state.initialListModelList);
+                },
+              );
+      },
     );
   }
 }
@@ -108,36 +134,36 @@ class DeleteAllPage extends StatelessWidget {
   }
 }
 
-class GoAddOrUpdatePage extends StatelessWidget {
-  const GoAddOrUpdatePage({super.key});
+// class GoAddOrUpdatePage extends StatelessWidget {
+//   const GoAddOrUpdatePage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      BlocProvider.of<AddItemButtonBloc>(context)
-          .add(const GotoAddPage(isAdd: false));
-      BlocProvider.of<EditItemButtonBloc>(context)
-          .add(const GotoEditPage(title: "BBB", description: "bbbbbbb"));
-    });
-    return BlocBuilder<AddItemButtonBloc, AddItemButtonState>(
-      builder: (contextAddButton, stateAddButton) {
-        return stateAddButton.isAdd == true
-            ? stateAddButton.addOrUpdateWidget ??
-                Container(width: 20, height: 30, color: Colors.pink)
-            : BlocBuilder<EditItemButtonBloc, EditItemButtonState>(
-                builder: (contextEditButton, stateEditButton) {
-                  return stateEditButton.editPageWidget ??
-                      Container(
-                        width: 10,
-                        height: 40,
-                        color: Colors.green,
-                      );
-                },
-              );
-      },
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     WidgetsBinding.instance.addPostFrameCallback((_) {
+//       BlocProvider.of<AddItemButtonBloc>(context)
+//           .add(const GotoAddPage(addOrEdit: AddOrEdit.addNote));
+//       BlocProvider.of<EditItemButtonBloc>(context).add(const GotoEditPage(
+//           addOrEdit: AddOrEdit.editNote, title: "BBB", description: "bbbbbbb"));
+//     });
+//     return BlocBuilder<AddItemButtonBloc, AddItemButtonState>(
+//       builder: (contextAddButton, stateAddButton) {
+//         return stateAddButton.addOrEdit == AddOrEdit.addNote
+//             ? stateAddButton.addOrUpdateWidget ??
+//                 Container(width: 20, height: 30, color: Colors.pink)
+//             : BlocBuilder<EditItemButtonBloc, EditItemButtonState>(
+//                 builder: (contextEditButton, stateEditButton) {
+//                   return stateEditButton.editPageWidget ??
+//                       Container(
+//                         width: 10,
+//                         height: 40,
+//                         color: Colors.green,
+//                       );
+//                 },
+//               );
+//       },
+//     );
+//   }
+// }
 
 class InitalListView extends StatelessWidget {
   const InitalListView({Key? key}) : super(key: key);

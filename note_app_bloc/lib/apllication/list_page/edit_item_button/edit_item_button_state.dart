@@ -1,4 +1,4 @@
-part of 'update_item_button_bloc.dart';
+part of 'edit_item_button_bloc.dart';
 
 @freezed
 class EditItemButtonState with _$EditItemButtonState {

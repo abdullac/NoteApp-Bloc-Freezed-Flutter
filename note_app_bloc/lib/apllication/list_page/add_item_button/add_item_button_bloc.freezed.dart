@@ -16,20 +16,20 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AddItemButtonEvent {
-  bool get isAdd => throw _privateConstructorUsedError;
+  AddOrEdit get addOrEdit => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isAdd) gotoAddPage,
+    required TResult Function(AddOrEdit addOrEdit) gotoAddPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool isAdd)? gotoAddPage,
+    TResult? Function(AddOrEdit addOrEdit)? gotoAddPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isAdd)? gotoAddPage,
+    TResult Function(AddOrEdit addOrEdit)? gotoAddPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +61,7 @@ abstract class $AddItemButtonEventCopyWith<$Res> {
           AddItemButtonEvent value, $Res Function(AddItemButtonEvent) then) =
       _$AddItemButtonEventCopyWithImpl<$Res, AddItemButtonEvent>;
   @useResult
-  $Res call({bool isAdd});
+  $Res call({AddOrEdit addOrEdit});
 }
 
 /// @nodoc
@@ -77,13 +77,13 @@ class _$AddItemButtonEventCopyWithImpl<$Res, $Val extends AddItemButtonEvent>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isAdd = null,
+    Object? addOrEdit = null,
   }) {
     return _then(_value.copyWith(
-      isAdd: null == isAdd
-          ? _value.isAdd
-          : isAdd // ignore: cast_nullable_to_non_nullable
-              as bool,
+      addOrEdit: null == addOrEdit
+          ? _value.addOrEdit
+          : addOrEdit // ignore: cast_nullable_to_non_nullable
+              as AddOrEdit,
     ) as $Val);
   }
 }
@@ -96,7 +96,7 @@ abstract class _$$GotoAddPageCopyWith<$Res>
       __$$GotoAddPageCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isAdd});
+  $Res call({AddOrEdit addOrEdit});
 }
 
 /// @nodoc
@@ -110,13 +110,13 @@ class __$$GotoAddPageCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isAdd = null,
+    Object? addOrEdit = null,
   }) {
     return _then(_$GotoAddPage(
-      isAdd: null == isAdd
-          ? _value.isAdd
-          : isAdd // ignore: cast_nullable_to_non_nullable
-              as bool,
+      addOrEdit: null == addOrEdit
+          ? _value.addOrEdit
+          : addOrEdit // ignore: cast_nullable_to_non_nullable
+              as AddOrEdit,
     ));
   }
 }
@@ -124,14 +124,14 @@ class __$$GotoAddPageCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GotoAddPage implements GotoAddPage {
-  const _$GotoAddPage({required this.isAdd});
+  const _$GotoAddPage({required this.addOrEdit});
 
   @override
-  final bool isAdd;
+  final AddOrEdit addOrEdit;
 
   @override
   String toString() {
-    return 'AddItemButtonEvent.gotoAddPage(isAdd: $isAdd)';
+    return 'AddItemButtonEvent.gotoAddPage(addOrEdit: $addOrEdit)';
   }
 
   @override
@@ -139,11 +139,12 @@ class _$GotoAddPage implements GotoAddPage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GotoAddPage &&
-            (identical(other.isAdd, isAdd) || other.isAdd == isAdd));
+            (identical(other.addOrEdit, addOrEdit) ||
+                other.addOrEdit == addOrEdit));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isAdd);
+  int get hashCode => Object.hash(runtimeType, addOrEdit);
 
   @JsonKey(ignore: true)
   @override
@@ -154,27 +155,27 @@ class _$GotoAddPage implements GotoAddPage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isAdd) gotoAddPage,
+    required TResult Function(AddOrEdit addOrEdit) gotoAddPage,
   }) {
-    return gotoAddPage(isAdd);
+    return gotoAddPage(addOrEdit);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(bool isAdd)? gotoAddPage,
+    TResult? Function(AddOrEdit addOrEdit)? gotoAddPage,
   }) {
-    return gotoAddPage?.call(isAdd);
+    return gotoAddPage?.call(addOrEdit);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isAdd)? gotoAddPage,
+    TResult Function(AddOrEdit addOrEdit)? gotoAddPage,
     required TResult orElse(),
   }) {
     if (gotoAddPage != null) {
-      return gotoAddPage(isAdd);
+      return gotoAddPage(addOrEdit);
     }
     return orElse();
   }
@@ -209,10 +210,11 @@ class _$GotoAddPage implements GotoAddPage {
 }
 
 abstract class GotoAddPage implements AddItemButtonEvent {
-  const factory GotoAddPage({required final bool isAdd}) = _$GotoAddPage;
+  const factory GotoAddPage({required final AddOrEdit addOrEdit}) =
+      _$GotoAddPage;
 
   @override
-  bool get isAdd;
+  AddOrEdit get addOrEdit;
   @override
   @JsonKey(ignore: true)
   _$$GotoAddPageCopyWith<_$GotoAddPage> get copyWith =>
@@ -222,7 +224,7 @@ abstract class GotoAddPage implements AddItemButtonEvent {
 /// @nodoc
 mixin _$AddItemButtonState {
   Widget? get addOrUpdateWidget => throw _privateConstructorUsedError;
-  bool get isAdd => throw _privateConstructorUsedError;
+  AddOrEdit get addOrEdit => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AddItemButtonStateCopyWith<AddItemButtonState> get copyWith =>
@@ -235,7 +237,7 @@ abstract class $AddItemButtonStateCopyWith<$Res> {
           AddItemButtonState value, $Res Function(AddItemButtonState) then) =
       _$AddItemButtonStateCopyWithImpl<$Res, AddItemButtonState>;
   @useResult
-  $Res call({Widget? addOrUpdateWidget, bool isAdd});
+  $Res call({Widget? addOrUpdateWidget, AddOrEdit addOrEdit});
 }
 
 /// @nodoc
@@ -252,17 +254,17 @@ class _$AddItemButtonStateCopyWithImpl<$Res, $Val extends AddItemButtonState>
   @override
   $Res call({
     Object? addOrUpdateWidget = freezed,
-    Object? isAdd = null,
+    Object? addOrEdit = null,
   }) {
     return _then(_value.copyWith(
       addOrUpdateWidget: freezed == addOrUpdateWidget
           ? _value.addOrUpdateWidget
           : addOrUpdateWidget // ignore: cast_nullable_to_non_nullable
               as Widget?,
-      isAdd: null == isAdd
-          ? _value.isAdd
-          : isAdd // ignore: cast_nullable_to_non_nullable
-              as bool,
+      addOrEdit: null == addOrEdit
+          ? _value.addOrEdit
+          : addOrEdit // ignore: cast_nullable_to_non_nullable
+              as AddOrEdit,
     ) as $Val);
   }
 }
@@ -275,7 +277,7 @@ abstract class _$$_AddItemButtonStateCopyWith<$Res>
       __$$_AddItemButtonStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Widget? addOrUpdateWidget, bool isAdd});
+  $Res call({Widget? addOrUpdateWidget, AddOrEdit addOrEdit});
 }
 
 /// @nodoc
@@ -290,17 +292,17 @@ class __$$_AddItemButtonStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? addOrUpdateWidget = freezed,
-    Object? isAdd = null,
+    Object? addOrEdit = null,
   }) {
     return _then(_$_AddItemButtonState(
       addOrUpdateWidget: freezed == addOrUpdateWidget
           ? _value.addOrUpdateWidget
           : addOrUpdateWidget // ignore: cast_nullable_to_non_nullable
               as Widget?,
-      isAdd: null == isAdd
-          ? _value.isAdd
-          : isAdd // ignore: cast_nullable_to_non_nullable
-              as bool,
+      addOrEdit: null == addOrEdit
+          ? _value.addOrEdit
+          : addOrEdit // ignore: cast_nullable_to_non_nullable
+              as AddOrEdit,
     ));
   }
 }
@@ -309,16 +311,16 @@ class __$$_AddItemButtonStateCopyWithImpl<$Res>
 
 class _$_AddItemButtonState implements _AddItemButtonState {
   const _$_AddItemButtonState(
-      {required this.addOrUpdateWidget, required this.isAdd});
+      {required this.addOrUpdateWidget, required this.addOrEdit});
 
   @override
   final Widget? addOrUpdateWidget;
   @override
-  final bool isAdd;
+  final AddOrEdit addOrEdit;
 
   @override
   String toString() {
-    return 'AddItemButtonState(addOrUpdateWidget: $addOrUpdateWidget, isAdd: $isAdd)';
+    return 'AddItemButtonState(addOrUpdateWidget: $addOrUpdateWidget, addOrEdit: $addOrEdit)';
   }
 
   @override
@@ -328,11 +330,12 @@ class _$_AddItemButtonState implements _AddItemButtonState {
             other is _$_AddItemButtonState &&
             (identical(other.addOrUpdateWidget, addOrUpdateWidget) ||
                 other.addOrUpdateWidget == addOrUpdateWidget) &&
-            (identical(other.isAdd, isAdd) || other.isAdd == isAdd));
+            (identical(other.addOrEdit, addOrEdit) ||
+                other.addOrEdit == addOrEdit));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, addOrUpdateWidget, isAdd);
+  int get hashCode => Object.hash(runtimeType, addOrUpdateWidget, addOrEdit);
 
   @JsonKey(ignore: true)
   @override
@@ -345,12 +348,12 @@ class _$_AddItemButtonState implements _AddItemButtonState {
 abstract class _AddItemButtonState implements AddItemButtonState {
   const factory _AddItemButtonState(
       {required final Widget? addOrUpdateWidget,
-      required final bool isAdd}) = _$_AddItemButtonState;
+      required final AddOrEdit addOrEdit}) = _$_AddItemButtonState;
 
   @override
   Widget? get addOrUpdateWidget;
   @override
-  bool get isAdd;
+  AddOrEdit get addOrEdit;
   @override
   @JsonKey(ignore: true)
   _$$_AddItemButtonStateCopyWith<_$_AddItemButtonState> get copyWith =>

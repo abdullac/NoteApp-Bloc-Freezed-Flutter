@@ -4,12 +4,12 @@ part of 'add_item_button_bloc.dart';
 class AddItemButtonState with _$AddItemButtonState {
   const factory AddItemButtonState({
     required Widget? addOrUpdateWidget,
-    required bool isAdd,
+    required AddOrEdit addOrEdit,
   }) = _AddItemButtonState;
   factory AddItemButtonState.initial() {
     return const AddItemButtonState(
       addOrUpdateWidget: null,
-      isAdd: true,
+      addOrEdit: AddOrEdit.addNote,
     );
   }
 }

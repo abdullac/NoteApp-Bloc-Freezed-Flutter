@@ -7,10 +7,13 @@ part 'delete_all_button_event.dart';
 part 'delete_all_button_state.dart';
 part 'delete_all_button_bloc.freezed.dart';
 
-class DeleteAllButtonBloc extends Bloc<DeleteAllButtonEvent, DeleteAllButtonState> {
+class DeleteAllButtonBloc
+    extends Bloc<DeleteAllButtonEvent, DeleteAllButtonState> {
   DeleteAllButtonBloc() : super(DeleteAllButtonState.initial()) {
-    on<DeleteAll>((event, emit) {
-      deleteAll();
+    on<DeleteAll>((event, emit) async {
+      emit(state.copyWith(afterDeleteAll: null));
+      int afterDeleteAll = await deleteAll();
+      emit(state.copyWith(afterDeleteAll: afterDeleteAll));
     });
   }
 }

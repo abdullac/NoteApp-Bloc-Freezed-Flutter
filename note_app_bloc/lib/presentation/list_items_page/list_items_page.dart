@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
+import 'package:note_app_bloc/apllication/list_page/add_item_button/add_item_button_bloc.dart';
+import 'package:note_app_bloc/apllication/list_page/delete_all_button/delete_all_button_bloc.dart';
+import 'package:note_app_bloc/apllication/list_page/delete_item_button/delete_item_button_bloc.dart';
+import 'package:note_app_bloc/apllication/list_page/edit_item_button/edit_item_button_bloc.dart';
+import 'package:note_app_bloc/apllication/list_page/initial_list/initial_list_bloc.dart';
 import 'package:note_app_bloc/domain/Models/initial_list_model.dart';
+import 'package:note_app_bloc/presentation/add_edit_item_page/add_edit_item_page.dart';
 
 class ListItemsPage extends StatelessWidget {
   final List<InitialListModel> initialListModelList;
   const ListItemsPage({
-    Key? key, required this.initialListModelList,
+    Key? key,
+    required this.initialListModelList,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: listItemPageAppBar(),
+      appBar: listItemPageAppBar(context),
       body: SafeArea(
           child: Container(
         color: Colors.white,
@@ -31,13 +40,15 @@ class ListItemsPage extends StatelessWidget {
     );
   }
 
-  AppBar listItemPageAppBar() {
+  AppBar listItemPageAppBar(BuildContext context) {
     return AppBar(
       title: const Text("Note App NA"),
       actions: [
         ElevatedButton(
           onPressed: () {
-            //
+            // delete button
+            BlocProvider.of<DeleteAllButtonBloc>(context)
+                .add(const DeleteAll());
           },
           child: const Text(
             "Delete All",
@@ -48,7 +59,20 @@ class ListItemsPage extends StatelessWidget {
         ),
         ElevatedButton(
           onPressed: () {
-            //
+            /// add button
+            BlocProvider.of<AddItemButtonBloc>(context)
+                .add(const GotoAddPage(addOrEdit: AddOrEdit.addNote));
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (context) =>
+                    BlocBuilder<AddItemButtonBloc, AddItemButtonState>(
+                  builder: (context, state) {
+                    return state.addOrUpdateWidget ??
+                        Container(color: Colors.orange, height: 50, width: 50);
+                  },
+                ),
+              ),
+            );
           },
           child: const Text(
             "Add",
@@ -64,11 +88,13 @@ class ListItemsPage extends StatelessWidget {
 
 class ListTileWidget extends StatelessWidget {
   final InitialListModel initialListModel;
-  const ListTileWidget({super.key, 
-  required this.initialListModel});
+  const ListTileWidget({super.key, required this.initialListModel});
 
   @override
   Widget build(BuildContext context) {
+    var formattedNoteDate = DateFormat('kk:mm\ndd  MM\nyyyy')
+        .format(DateTime.parse(initialListModel.noteDate));
+
     return Container(
       width: double.infinity,
       height: 70,
@@ -93,7 +119,8 @@ class ListTileWidget extends StatelessWidget {
           leading: SizedBox(
               width: 30,
               child: Text(
-                initialListModel.noteDate,
+                // initialListModel.noteDate,
+                formattedNoteDate,textAlign: TextAlign.center,
                 maxLines: 3,
                 style: const TextStyle(fontSize: 10),
               )),
@@ -116,7 +143,22 @@ class ListTileWidget extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    // edit ontap
+                    // edit
+                    BlocProvider.of<EditItemButtonBloc>(context).add(
+                        GotoEditPage(
+                            addOrEdit: AddOrEdit.editNote,
+                            initialListModel: initialListModel));
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => BlocBuilder<EditItemButtonBloc,
+                                EditItemButtonState>(
+                              builder: (context, state) {
+                                return state.editPageWidget ??
+                                    Container(
+                                        color: Colors.teal,
+                                        width: 40,
+                                        height: 70);
+                              },
+                            )));
                   },
                   child: const Icon(Icons.edit),
                 ),
@@ -126,6 +168,10 @@ class ListTileWidget extends StatelessWidget {
                 InkWell(
                   onTap: () {
                     // delete ontap
+                    BlocProvider.of<DeleteItemButtonBloc>(context)
+                        .add(DeleteItem(deleteId: initialListModel.noteId));
+                    BlocProvider.of<InitialListBloc>(context)
+                        .add(const InitialList());
                   },
                   child: const Icon(Icons.delete),
                 ),

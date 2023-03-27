@@ -166,13 +166,21 @@ abstract class DeleteAll implements DeleteAllButtonEvent {
 }
 
 /// @nodoc
-mixin _$DeleteAllButtonState {}
+mixin _$DeleteAllButtonState {
+  int? get afterDeleteAll => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $DeleteAllButtonStateCopyWith<DeleteAllButtonState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
 
 /// @nodoc
 abstract class $DeleteAllButtonStateCopyWith<$Res> {
   factory $DeleteAllButtonStateCopyWith(DeleteAllButtonState value,
           $Res Function(DeleteAllButtonState) then) =
       _$DeleteAllButtonStateCopyWithImpl<$Res, DeleteAllButtonState>;
+  @useResult
+  $Res call({int? afterDeleteAll});
 }
 
 /// @nodoc
@@ -185,13 +193,30 @@ class _$DeleteAllButtonStateCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? afterDeleteAll = freezed,
+  }) {
+    return _then(_value.copyWith(
+      afterDeleteAll: freezed == afterDeleteAll
+          ? _value.afterDeleteAll
+          : afterDeleteAll // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$_DeleteAllButtonStateCopyWith<$Res> {
+abstract class _$$_DeleteAllButtonStateCopyWith<$Res>
+    implements $DeleteAllButtonStateCopyWith<$Res> {
   factory _$$_DeleteAllButtonStateCopyWith(_$_DeleteAllButtonState value,
           $Res Function(_$_DeleteAllButtonState) then) =
       __$$_DeleteAllButtonStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? afterDeleteAll});
 }
 
 /// @nodoc
@@ -201,28 +226,62 @@ class __$$_DeleteAllButtonStateCopyWithImpl<$Res>
   __$$_DeleteAllButtonStateCopyWithImpl(_$_DeleteAllButtonState _value,
       $Res Function(_$_DeleteAllButtonState) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? afterDeleteAll = freezed,
+  }) {
+    return _then(_$_DeleteAllButtonState(
+      afterDeleteAll: freezed == afterDeleteAll
+          ? _value.afterDeleteAll
+          : afterDeleteAll // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_DeleteAllButtonState implements _DeleteAllButtonState {
-  const _$_DeleteAllButtonState();
+  const _$_DeleteAllButtonState({this.afterDeleteAll});
+
+  @override
+  final int? afterDeleteAll;
 
   @override
   String toString() {
-    return 'DeleteAllButtonState()';
+    return 'DeleteAllButtonState(afterDeleteAll: $afterDeleteAll)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_DeleteAllButtonState);
+        (other.runtimeType == runtimeType &&
+            other is _$_DeleteAllButtonState &&
+            (identical(other.afterDeleteAll, afterDeleteAll) ||
+                other.afterDeleteAll == afterDeleteAll));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, afterDeleteAll);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DeleteAllButtonStateCopyWith<_$_DeleteAllButtonState> get copyWith =>
+      __$$_DeleteAllButtonStateCopyWithImpl<_$_DeleteAllButtonState>(
+          this, _$identity);
 }
 
 abstract class _DeleteAllButtonState implements DeleteAllButtonState {
-  const factory _DeleteAllButtonState() = _$_DeleteAllButtonState;
+  const factory _DeleteAllButtonState({final int? afterDeleteAll}) =
+      _$_DeleteAllButtonState;
+
+  @override
+  int? get afterDeleteAll;
+  @override
+  @JsonKey(ignore: true)
+  _$$_DeleteAllButtonStateCopyWith<_$_DeleteAllButtonState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
