@@ -18,7 +18,7 @@ class EditItemButtonBloc
         editPageWidget: null,
       ));
       Widget editPageWidget = addOrUpdatePage(
-        event.addOrEdit,
+        // event.addOrEdit,
         event.initialListModel
       );
       emit(state.copyWith(

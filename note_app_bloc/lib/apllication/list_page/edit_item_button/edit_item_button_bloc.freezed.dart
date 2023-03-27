@@ -16,25 +16,21 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$EditItemButtonEvent {
-  AddOrEdit get addOrEdit => throw _privateConstructorUsedError;
+// required AddOrEdit addOrEdit,
   InitialListModel get initialListModel => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            AddOrEdit addOrEdit, InitialListModel initialListModel)
-        gotoEditPage,
+    required TResult Function(InitialListModel initialListModel) gotoEditPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(AddOrEdit addOrEdit, InitialListModel initialListModel)?
-        gotoEditPage,
+    TResult? Function(InitialListModel initialListModel)? gotoEditPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AddOrEdit addOrEdit, InitialListModel initialListModel)?
-        gotoEditPage,
+    TResult Function(InitialListModel initialListModel)? gotoEditPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -66,7 +62,7 @@ abstract class $EditItemButtonEventCopyWith<$Res> {
           EditItemButtonEvent value, $Res Function(EditItemButtonEvent) then) =
       _$EditItemButtonEventCopyWithImpl<$Res, EditItemButtonEvent>;
   @useResult
-  $Res call({AddOrEdit addOrEdit, InitialListModel initialListModel});
+  $Res call({InitialListModel initialListModel});
 
   $InitialListModelCopyWith<$Res> get initialListModel;
 }
@@ -84,14 +80,9 @@ class _$EditItemButtonEventCopyWithImpl<$Res, $Val extends EditItemButtonEvent>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? addOrEdit = null,
     Object? initialListModel = null,
   }) {
     return _then(_value.copyWith(
-      addOrEdit: null == addOrEdit
-          ? _value.addOrEdit
-          : addOrEdit // ignore: cast_nullable_to_non_nullable
-              as AddOrEdit,
       initialListModel: null == initialListModel
           ? _value.initialListModel
           : initialListModel // ignore: cast_nullable_to_non_nullable
@@ -116,7 +107,7 @@ abstract class _$$GotoEditPageCopyWith<$Res>
       __$$GotoEditPageCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({AddOrEdit addOrEdit, InitialListModel initialListModel});
+  $Res call({InitialListModel initialListModel});
 
   @override
   $InitialListModelCopyWith<$Res> get initialListModel;
@@ -133,14 +124,9 @@ class __$$GotoEditPageCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? addOrEdit = null,
     Object? initialListModel = null,
   }) {
     return _then(_$GotoEditPage(
-      addOrEdit: null == addOrEdit
-          ? _value.addOrEdit
-          : addOrEdit // ignore: cast_nullable_to_non_nullable
-              as AddOrEdit,
       initialListModel: null == initialListModel
           ? _value.initialListModel
           : initialListModel // ignore: cast_nullable_to_non_nullable
@@ -152,17 +138,15 @@ class __$$GotoEditPageCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GotoEditPage implements GotoEditPage {
-  const _$GotoEditPage(
-      {required this.addOrEdit, required this.initialListModel});
+  const _$GotoEditPage({required this.initialListModel});
 
-  @override
-  final AddOrEdit addOrEdit;
+// required AddOrEdit addOrEdit,
   @override
   final InitialListModel initialListModel;
 
   @override
   String toString() {
-    return 'EditItemButtonEvent.gotoEditPage(addOrEdit: $addOrEdit, initialListModel: $initialListModel)';
+    return 'EditItemButtonEvent.gotoEditPage(initialListModel: $initialListModel)';
   }
 
   @override
@@ -170,14 +154,12 @@ class _$GotoEditPage implements GotoEditPage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GotoEditPage &&
-            (identical(other.addOrEdit, addOrEdit) ||
-                other.addOrEdit == addOrEdit) &&
             (identical(other.initialListModel, initialListModel) ||
                 other.initialListModel == initialListModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, addOrEdit, initialListModel);
+  int get hashCode => Object.hash(runtimeType, initialListModel);
 
   @JsonKey(ignore: true)
   @override
@@ -188,31 +170,27 @@ class _$GotoEditPage implements GotoEditPage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            AddOrEdit addOrEdit, InitialListModel initialListModel)
-        gotoEditPage,
+    required TResult Function(InitialListModel initialListModel) gotoEditPage,
   }) {
-    return gotoEditPage(addOrEdit, initialListModel);
+    return gotoEditPage(initialListModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(AddOrEdit addOrEdit, InitialListModel initialListModel)?
-        gotoEditPage,
+    TResult? Function(InitialListModel initialListModel)? gotoEditPage,
   }) {
-    return gotoEditPage?.call(addOrEdit, initialListModel);
+    return gotoEditPage?.call(initialListModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AddOrEdit addOrEdit, InitialListModel initialListModel)?
-        gotoEditPage,
+    TResult Function(InitialListModel initialListModel)? gotoEditPage,
     required TResult orElse(),
   }) {
     if (gotoEditPage != null) {
-      return gotoEditPage(addOrEdit, initialListModel);
+      return gotoEditPage(initialListModel);
     }
     return orElse();
   }
@@ -248,12 +226,9 @@ class _$GotoEditPage implements GotoEditPage {
 
 abstract class GotoEditPage implements EditItemButtonEvent {
   const factory GotoEditPage(
-      {required final AddOrEdit addOrEdit,
-      required final InitialListModel initialListModel}) = _$GotoEditPage;
+      {required final InitialListModel initialListModel}) = _$GotoEditPage;
 
-  @override
-  AddOrEdit get addOrEdit;
-  @override
+  @override // required AddOrEdit addOrEdit,
   InitialListModel get initialListModel;
   @override
   @JsonKey(ignore: true)

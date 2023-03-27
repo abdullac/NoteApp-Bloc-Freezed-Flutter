@@ -9,31 +9,3 @@ Future<List<InitialListModel>> initialList() async {
   initialListModelList.addAll(hiveBox.values);
   return initialListModelList;
 }
-
-
-
-
-
-
-
-
-
-
-// Future<InitialListModel> initialList(InitialListModel initialListModel) async {
-
-//   var initialListBox = await Hive.openBox<InitialListModel>("initialListBox");
-
-//   await initialListBox.add(initialListModel);
-//   // initialListModel.noteId = id;
-
-//   return initialListModel;
-// }
-
-
-
-
-// const InitialListModel(
-//     noteDate: "march 25",
-//     noteTitle: "Sample Note Tiitle",
-//     noteDescription: "Sample Note Description",
-//   );

@@ -13,19 +13,19 @@ class AddItemButtonBloc extends Bloc<AddItemButtonEvent, AddItemButtonState> {
     on<GotoAddPage>((event, emit) {
       emit(state.copyWith(
         addOrUpdateWidget: null,
-        addOrEdit: event.addOrEdit,
+        // addOrEdit: event.addOrEdit,
       ));
-      if (event.addOrEdit == AddOrEdit.addNote) {
+      // if (event.addOrEdit == AddOrEdit.addNote) {
         Widget addOrUpdateWidget = addOrUpdatePage(
-          state.addOrEdit
+          // state.addOrEdit
         );
         emit(state.copyWith(
           addOrUpdateWidget: addOrUpdateWidget,
-          addOrEdit: event.addOrEdit,
+          // addOrEdit: event.addOrEdit,
         ));
-      } else {
-        //
-      }
+      // } else {
+      //   //
+      // }
     });
   }
 }

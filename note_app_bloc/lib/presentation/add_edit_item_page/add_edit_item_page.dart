@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app_bloc/apllication/add_or_update_page/save_item_button/save_item_button_bloc.dart';
 import 'package:note_app_bloc/apllication/add_or_update_page/update_item_button/update_item_button_bloc.dart';
-import 'package:note_app_bloc/apllication/list_page/add_item_button/add_item_button_bloc.dart';
 import 'package:note_app_bloc/apllication/list_page/initial_list/initial_list_bloc.dart';
 import 'package:note_app_bloc/domain/Models/initial_list_model.dart';
 import 'package:note_app_bloc/presentation/list_items_page/list_items_page.dart';
@@ -15,7 +14,7 @@ enum AddOrEdit {
 class AddEditItemPage extends StatelessWidget {
   final AddOrEdit addOrEdit;
   final InitialListModel? initialListModel;
-  AddEditItemPage({
+  const AddEditItemPage({
     Key? key,
     required this.addOrEdit,
     this.initialListModel,
@@ -45,7 +44,9 @@ class AddEditItemPage extends StatelessWidget {
                   controller: titleEditingController,
                   maxLines: 1,
                   decoration: const InputDecoration(
-                      hintText: "title", border: OutlineInputBorder()),
+                    hintText: "title",
+                    border: OutlineInputBorder(),
+                  ),
                 ),
                 const SizedBox(
                   height: 10,
@@ -70,22 +71,22 @@ class AddEditItemPage extends StatelessWidget {
       BuildContext context, InitialListModel? initialListModel) {
     return AppBar(
       leading: IconButton(
-          onPressed: () {
-            //  go back button
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(
-                builder: (context) =>
-                    BlocBuilder<InitialListBloc, InitialListState>(
-                  builder: (context, state) {
-                    return ListItemsPage(
-                        initialListModelList: state.initialListModelList);
-                  },
-                ),
+        onPressed: () {
+          //  go back button
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (context) =>
+                  BlocBuilder<InitialListBloc, InitialListState>(
+                builder: (context, state) {
+                  return ListItemsPage(
+                      initialListModelList: state.initialListModelList);
+                },
               ),
-            );
-            // Navigator.of(context).pop();
-          },
-          icon: const Icon(Icons.arrow_back)),
+            ),
+          );
+        },
+        icon: const Icon(Icons.arrow_back),
+      ),
       title: Text(addOrEdit == AddOrEdit.addNote ? "Add Note" : "Edit Note"),
       actions: [
         ElevatedButton(
@@ -111,28 +112,38 @@ class AddEditItemPage extends StatelessWidget {
   void saveItem(BuildContext context) {
     if (titleEditingController.text.isNotEmpty &&
         descriptionEditingController.text.isNotEmpty) {
-      BlocProvider.of<SaveItemButtonBloc>(context).add(SaveItem(
-        initialListModel: InitialListModel(
-          noteId: DateTime.now().millisecond * DateTime.now().second,
-          noteDate: DateTime.now().toString(),
-          noteTitle: titleEditingController.text,
-          noteDescription: descriptionEditingController.text,
+      BlocProvider.of<SaveItemButtonBloc>(context).add(
+        SaveItem(
+          initialListModel: InitialListModel(
+            noteId: DateTime.now().millisecond * DateTime.now().second,
+            noteDate: DateTime.now().toString(),
+            noteTitle: titleEditingController.text,
+            noteDescription: descriptionEditingController.text,
+          ),
         ),
-      ));
+      );
 
       /// reload initial list model list
-      BlocProvider.of<InitialListBloc>(context).add(const InitialList());
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
+      BlocProvider.of<InitialListBloc>(context).add(
+        const InitialList(),
+      );
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
           builder: (context) => BlocBuilder<InitialListBloc, InitialListState>(
-                builder: (context, state) {
-                  return ListItemsPage(
-                    initialListModelList: state.initialListModelList,
-                  );
-                },
-              )));
+            builder: (context, state) {
+              return ListItemsPage(
+                initialListModelList: state.initialListModelList,
+              );
+            },
+          ),
+        ),
+      );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("please fill Title or Description")));
+        const SnackBar(
+          content: Text("please fill Title or Description"),
+        ),
+      );
     }
   }
 
@@ -146,7 +157,9 @@ class AddEditItemPage extends StatelessWidget {
         noteTitle: AddEditItemPage.titleEditingController.text,
         noteDescription: AddEditItemPage.descriptionEditingController.text,
       )));
-      BlocProvider.of<InitialListBloc>(context).add(const InitialList());
+      BlocProvider.of<InitialListBloc>(context).add(
+        const InitialList(),
+      );
       Navigator.of(context).pushReplacement(MaterialPageRoute(
           builder: (context) => BlocBuilder<InitialListBloc, InitialListState>(
                 builder: (context, state) {
@@ -156,26 +169,10 @@ class AddEditItemPage extends StatelessWidget {
               )));
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("please fill Title or Description")));
+        const SnackBar(
+          content: Text("please fill Title or Description"),
+        ),
+      );
     }
   }
 }
-
-
-
-
-
-
-
-//  Navigator.of(context).pushAndRemoveUntil(
-//                   MaterialPageRoute(
-//                       builder: (context) =>
-//                           BlocBuilder<InitialListBloc, InitialListState>(
-//                             builder: (context, state) {
-//                               return ListItemsPage(
-//                                 initialListModelList:
-//                                     state.initialListModelList,
-//                               );
-//                             },
-//                           )),
-//                   (Route<dynamic> route) => false);

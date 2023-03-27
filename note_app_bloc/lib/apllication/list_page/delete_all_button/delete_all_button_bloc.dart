@@ -11,9 +11,17 @@ class DeleteAllButtonBloc
     extends Bloc<DeleteAllButtonEvent, DeleteAllButtonState> {
   DeleteAllButtonBloc() : super(DeleteAllButtonState.initial()) {
     on<DeleteAll>((event, emit) async {
-      emit(state.copyWith(afterDeleteAll: null));
+      emit(
+        state.copyWith(
+          afterDeleteAll: null,
+        ),
+      );
       int afterDeleteAll = await deleteAll();
-      emit(state.copyWith(afterDeleteAll: afterDeleteAll));
+      emit(
+        state.copyWith(
+          afterDeleteAll: afterDeleteAll,
+        ),
+      );
     });
   }
 }

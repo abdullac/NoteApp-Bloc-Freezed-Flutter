@@ -2,7 +2,9 @@ part of 'add_item_button_bloc.dart';
 
 @freezed
 class AddItemButtonEvent with _$AddItemButtonEvent {
-  const factory AddItemButtonEvent.gotoAddPage({
-    required AddOrEdit addOrEdit,
-  }) = GotoAddPage;
+  const factory AddItemButtonEvent.gotoAddPage(
+  //   {
+  //   required AddOrEdit addOrEdit,
+  // }
+  ) = GotoAddPage;
 }

@@ -9,7 +9,6 @@ import 'package:note_app_bloc/apllication/list_page/initial_list/initial_list_bl
 import 'package:note_app_bloc/apllication/list_page/list_item_tile/list_item_tile_bloc.dart';
 import 'package:note_app_bloc/domain/Models/initial_list_model.dart';
 import 'package:note_app_bloc/presentation/add_edit_item_page/add_edit_item_page.dart';
-import 'package:note_app_bloc/presentation/note_view_page/note_view_page.dart';
 
 class ListItemsPage extends StatelessWidget {
   final List<InitialListModel> initialListModelList;
@@ -51,6 +50,22 @@ class ListItemsPage extends StatelessWidget {
             // delete button
             BlocProvider.of<DeleteAllButtonBloc>(context)
                 .add(const DeleteAll());
+
+            Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (context) =>
+                    BlocBuilder<DeleteAllButtonBloc, DeleteAllButtonState>(
+                      builder: (context, state) {
+                        BlocProvider.of<InitialListBloc>(context)
+                            .add(const InitialList());
+                        return BlocBuilder<InitialListBloc, InitialListState>(
+                          builder: (context, state) {
+                            return ListItemsPage(
+                                initialListModelList:
+                                    state.initialListModelList);
+                          },
+                        );
+                      },
+                    )));
           },
           child: const Text(
             "Delete All",
@@ -63,7 +78,7 @@ class ListItemsPage extends StatelessWidget {
           onPressed: () {
             /// add button
             BlocProvider.of<AddItemButtonBloc>(context)
-                .add(const GotoAddPage(addOrEdit: AddOrEdit.addNote));
+                .add(const GotoAddPage());
             Navigator.of(context).pushReplacement(
               MaterialPageRoute(
                 builder: (context) =>
@@ -134,8 +149,8 @@ class ListTileWidget extends StatelessWidget {
           leading: SizedBox(
               width: 30,
               child: Text(
-                // initialListModel.noteDate,
-                formattedNoteDate, textAlign: TextAlign.center,
+                formattedNoteDate,
+                textAlign: TextAlign.center,
                 maxLines: 3,
                 style: const TextStyle(fontSize: 10),
               )),
@@ -159,10 +174,8 @@ class ListTileWidget extends StatelessWidget {
                 InkWell(
                   onTap: () {
                     // edit
-                    BlocProvider.of<EditItemButtonBloc>(context).add(
-                        GotoEditPage(
-                            addOrEdit: AddOrEdit.editNote,
-                            initialListModel: initialListModel));
+                    BlocProvider.of<EditItemButtonBloc>(context)
+                        .add(GotoEditPage(initialListModel: initialListModel));
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) => BlocBuilder<EditItemButtonBloc,
                                 EditItemButtonState>(

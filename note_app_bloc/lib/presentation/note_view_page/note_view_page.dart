@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:note_app_bloc/domain/Models/initial_list_model.dart';
 
 class NoteViewPage extends StatelessWidget {
