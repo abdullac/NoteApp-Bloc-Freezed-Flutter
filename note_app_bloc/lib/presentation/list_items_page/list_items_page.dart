@@ -6,8 +6,10 @@ import 'package:note_app_bloc/apllication/list_page/delete_all_button/delete_all
 import 'package:note_app_bloc/apllication/list_page/delete_item_button/delete_item_button_bloc.dart';
 import 'package:note_app_bloc/apllication/list_page/edit_item_button/edit_item_button_bloc.dart';
 import 'package:note_app_bloc/apllication/list_page/initial_list/initial_list_bloc.dart';
+import 'package:note_app_bloc/apllication/list_page/list_item_tile/list_item_tile_bloc.dart';
 import 'package:note_app_bloc/domain/Models/initial_list_model.dart';
 import 'package:note_app_bloc/presentation/add_edit_item_page/add_edit_item_page.dart';
+import 'package:note_app_bloc/presentation/note_view_page/note_view_page.dart';
 
 class ListItemsPage extends StatelessWidget {
   final List<InitialListModel> initialListModelList;
@@ -115,12 +117,25 @@ class ListTileWidget extends StatelessWidget {
         child: ListTile(
           onTap: () {
             // tile ontap
+            BlocProvider.of<ListItemTileBloc>(context)
+                .add(GotoNoteViewPage(initialListModel: initialListModel));
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) =>
+                    BlocBuilder<ListItemTileBloc, ListItemTileState>(
+                      builder: (context, state) {
+                        return state.noteViewPageWidget ??
+                            Container(
+                                color: Colors.deepOrangeAccent,
+                                height: 20,
+                                width: 80);
+                      },
+                    )));
           },
           leading: SizedBox(
               width: 30,
               child: Text(
                 // initialListModel.noteDate,
-                formattedNoteDate,textAlign: TextAlign.center,
+                formattedNoteDate, textAlign: TextAlign.center,
                 maxLines: 3,
                 style: const TextStyle(fontSize: 10),
               )),

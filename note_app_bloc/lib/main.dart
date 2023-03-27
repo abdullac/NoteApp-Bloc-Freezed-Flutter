@@ -10,6 +10,7 @@ import 'package:note_app_bloc/apllication/list_page/delete_item_button/delete_it
 import 'package:note_app_bloc/apllication/list_page/edit_item_button/edit_item_button_bloc.dart';
 import 'package:note_app_bloc/apllication/list_page/initial_list/initial_list_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:note_app_bloc/apllication/list_page/list_item_tile/list_item_tile_bloc.dart';
 import 'package:note_app_bloc/domain/Models/initial_list_model.dart';
 import 'package:note_app_bloc/domain/list_page/initial_list.dart';
 
@@ -43,6 +44,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => DeleteAllButtonBloc()),
         BlocProvider(create: (context) => SaveItemButtonBloc()),
         BlocProvider(create: (context) => UpdateItemButtonBloc()),
+        BlocProvider(create: (context) => ListItemTileBloc()),
       ],
       child: const MaterialApp(
         home: Scaffold(
