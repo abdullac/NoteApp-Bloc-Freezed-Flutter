@@ -8,7 +8,8 @@ import 'package:note_app_bloc/apllication/list_page/edit_item_button/edit_item_b
 import 'package:note_app_bloc/apllication/list_page/initial_list/initial_list_bloc.dart';
 import 'package:note_app_bloc/apllication/list_page/list_item_tile/list_item_tile_bloc.dart';
 import 'package:note_app_bloc/domain/Models/initial_list_model.dart';
-import 'package:note_app_bloc/presentation/add_edit_item_page/add_edit_item_page.dart';
+
+int setNoteId = 0;
 
 class ListItemsPage extends StatelessWidget {
   final List<InitialListModel> initialListModelList;
@@ -19,6 +20,13 @@ class ListItemsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    if (initialListModelList.isNotEmpty) {
+      setNoteId = (initialListModelList.last.noteId+1);
+    } else {
+      setNoteId = 0;
+    }
+
     return Scaffold(
       appBar: listItemPageAppBar(context),
       body: SafeArea(

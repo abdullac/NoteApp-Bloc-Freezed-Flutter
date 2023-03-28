@@ -115,7 +115,8 @@ class AddEditItemPage extends StatelessWidget {
       BlocProvider.of<SaveItemButtonBloc>(context).add(
         SaveItem(
           initialListModel: InitialListModel(
-            noteId: DateTime.now().millisecond * DateTime.now().second,
+            // noteId: DateTime.now().millisecond * DateTime.now().second,
+            noteId: setNoteId,
             noteDate: DateTime.now().toString(),
             noteTitle: titleEditingController.text,
             noteDescription: descriptionEditingController.text,

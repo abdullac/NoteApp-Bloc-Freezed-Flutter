@@ -14,6 +14,8 @@ import 'package:note_app_bloc/domain/Models/initial_list_model.dart';
 import 'presentation/list_items_page/list_items_page.dart';
 
 main() {
+
+  
   WidgetsFlutterBinding.ensureInitialized();
   var path = Directory.current.path;
   Hive.init(path);
