@@ -6,17 +6,17 @@ part of 'initial_list_model.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class InitialListModelAdapter extends TypeAdapter<InitialListModel> {
+class NoteItemModelAdapter extends TypeAdapter<NoteItemModel> {
   @override
   final int typeId = 1;
 
   @override
-  InitialListModel read(BinaryReader reader) {
+  NoteItemModel read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return InitialListModel(
+    return NoteItemModel(
       noteId: fields[0] as int,
       noteDate: fields[1] as String,
       noteTitle: fields[2] as String,
@@ -25,7 +25,7 @@ class InitialListModelAdapter extends TypeAdapter<InitialListModel> {
   }
 
   @override
-  void write(BinaryWriter writer, InitialListModel obj) {
+  void write(BinaryWriter writer, NoteItemModel obj) {
     writer
       ..writeByte(4)
       ..writeByte(0)
@@ -44,7 +44,7 @@ class InitialListModelAdapter extends TypeAdapter<InitialListModel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is InitialListModelAdapter &&
+      other is NoteItemModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

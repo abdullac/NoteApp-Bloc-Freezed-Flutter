@@ -11,6 +11,7 @@ class DeleteItemButtonBloc
     extends Bloc<DeleteItemButtonEvent, DeleteItemButtonState> {
   DeleteItemButtonBloc() : super(DeleteItemButtonState.initial()) {
     on<DeleteItem>((event, emit) async {
+      /// calls deleteItem meted for delete item from hive data base
       await deleteItem(event.deleteId);
     });
   }

@@ -4,6 +4,6 @@ part of 'edit_item_button_bloc.dart';
 class EditItemButtonEvent with _$EditItemButtonEvent {
   const factory EditItemButtonEvent.gotoEditPage({
     // required AddOrEdit addOrEdit,
-    required InitialListModel initialListModel,
+    required NoteItemModel initialListModel,
   }) = GotoEditPage;
 }

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'initial_list_bloc.dart';
+part of 'items_listview_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$InitialListEvent {
+mixin _$ItemsListviewEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialList,
@@ -51,16 +51,16 @@ mixin _$InitialListEvent {
 }
 
 /// @nodoc
-abstract class $InitialListEventCopyWith<$Res> {
-  factory $InitialListEventCopyWith(
-          InitialListEvent value, $Res Function(InitialListEvent) then) =
-      _$InitialListEventCopyWithImpl<$Res, InitialListEvent>;
+abstract class $ItemsListviewEventCopyWith<$Res> {
+  factory $ItemsListviewEventCopyWith(
+          ItemsListviewEvent value, $Res Function(ItemsListviewEvent) then) =
+      _$ItemsListviewEventCopyWithImpl<$Res, ItemsListviewEvent>;
 }
 
 /// @nodoc
-class _$InitialListEventCopyWithImpl<$Res, $Val extends InitialListEvent>
-    implements $InitialListEventCopyWith<$Res> {
-  _$InitialListEventCopyWithImpl(this._value, this._then);
+class _$ItemsListviewEventCopyWithImpl<$Res, $Val extends ItemsListviewEvent>
+    implements $ItemsListviewEventCopyWith<$Res> {
+  _$ItemsListviewEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -77,7 +77,7 @@ abstract class _$$InitialListCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialListCopyWithImpl<$Res>
-    extends _$InitialListEventCopyWithImpl<$Res, _$InitialList>
+    extends _$ItemsListviewEventCopyWithImpl<$Res, _$InitialList>
     implements _$$InitialListCopyWith<$Res> {
   __$$InitialListCopyWithImpl(
       _$InitialList _value, $Res Function(_$InitialList) _then)
@@ -91,7 +91,7 @@ class _$InitialList implements InitialList {
 
   @override
   String toString() {
-    return 'InitialListEvent.initialList()';
+    return 'ItemsListviewEvent.initialList()';
   }
 
   @override
@@ -160,33 +160,33 @@ class _$InitialList implements InitialList {
   }
 }
 
-abstract class InitialList implements InitialListEvent {
+abstract class InitialList implements ItemsListviewEvent {
   const factory InitialList() = _$InitialList;
 }
 
 /// @nodoc
-mixin _$InitialListState {
-  List<InitialListModel> get initialListModelList =>
+mixin _$ItemsListviewState {
+  List<NoteItemModel> get noteItemModelList =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $InitialListStateCopyWith<InitialListState> get copyWith =>
+  $ItemsListviewStateCopyWith<ItemsListviewState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $InitialListStateCopyWith<$Res> {
-  factory $InitialListStateCopyWith(
-          InitialListState value, $Res Function(InitialListState) then) =
-      _$InitialListStateCopyWithImpl<$Res, InitialListState>;
+abstract class $ItemsListviewStateCopyWith<$Res> {
+  factory $ItemsListviewStateCopyWith(
+          ItemsListviewState value, $Res Function(ItemsListviewState) then) =
+      _$ItemsListviewStateCopyWithImpl<$Res, ItemsListviewState>;
   @useResult
-  $Res call({List<InitialListModel> initialListModelList});
+  $Res call({List<NoteItemModel> noteItemModelList});
 }
 
 /// @nodoc
-class _$InitialListStateCopyWithImpl<$Res, $Val extends InitialListState>
-    implements $InitialListStateCopyWith<$Res> {
-  _$InitialListStateCopyWithImpl(this._value, this._then);
+class _$ItemsListviewStateCopyWithImpl<$Res, $Val extends ItemsListviewState>
+    implements $ItemsListviewStateCopyWith<$Res> {
+  _$ItemsListviewStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -196,100 +196,101 @@ class _$InitialListStateCopyWithImpl<$Res, $Val extends InitialListState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? initialListModelList = null,
+    Object? noteItemModelList = null,
   }) {
     return _then(_value.copyWith(
-      initialListModelList: null == initialListModelList
-          ? _value.initialListModelList
-          : initialListModelList // ignore: cast_nullable_to_non_nullable
-              as List<InitialListModel>,
+      noteItemModelList: null == noteItemModelList
+          ? _value.noteItemModelList
+          : noteItemModelList // ignore: cast_nullable_to_non_nullable
+              as List<NoteItemModel>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_InitialListStateCopyWith<$Res>
-    implements $InitialListStateCopyWith<$Res> {
-  factory _$$_InitialListStateCopyWith(
-          _$_InitialListState value, $Res Function(_$_InitialListState) then) =
-      __$$_InitialListStateCopyWithImpl<$Res>;
+abstract class _$$_ItemsListviewStateCopyWith<$Res>
+    implements $ItemsListviewStateCopyWith<$Res> {
+  factory _$$_ItemsListviewStateCopyWith(_$_ItemsListviewState value,
+          $Res Function(_$_ItemsListviewState) then) =
+      __$$_ItemsListviewStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<InitialListModel> initialListModelList});
+  $Res call({List<NoteItemModel> noteItemModelList});
 }
 
 /// @nodoc
-class __$$_InitialListStateCopyWithImpl<$Res>
-    extends _$InitialListStateCopyWithImpl<$Res, _$_InitialListState>
-    implements _$$_InitialListStateCopyWith<$Res> {
-  __$$_InitialListStateCopyWithImpl(
-      _$_InitialListState _value, $Res Function(_$_InitialListState) _then)
+class __$$_ItemsListviewStateCopyWithImpl<$Res>
+    extends _$ItemsListviewStateCopyWithImpl<$Res, _$_ItemsListviewState>
+    implements _$$_ItemsListviewStateCopyWith<$Res> {
+  __$$_ItemsListviewStateCopyWithImpl(
+      _$_ItemsListviewState _value, $Res Function(_$_ItemsListviewState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? initialListModelList = null,
+    Object? noteItemModelList = null,
   }) {
-    return _then(_$_InitialListState(
-      initialListModelList: null == initialListModelList
-          ? _value._initialListModelList
-          : initialListModelList // ignore: cast_nullable_to_non_nullable
-              as List<InitialListModel>,
+    return _then(_$_ItemsListviewState(
+      noteItemModelList: null == noteItemModelList
+          ? _value._noteItemModelList
+          : noteItemModelList // ignore: cast_nullable_to_non_nullable
+              as List<NoteItemModel>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_InitialListState implements _InitialListState {
-  const _$_InitialListState(
-      {required final List<InitialListModel> initialListModelList})
-      : _initialListModelList = initialListModelList;
+class _$_ItemsListviewState implements _ItemsListviewState {
+  const _$_ItemsListviewState(
+      {required final List<NoteItemModel> noteItemModelList})
+      : _noteItemModelList = noteItemModelList;
 
-  final List<InitialListModel> _initialListModelList;
+  final List<NoteItemModel> _noteItemModelList;
   @override
-  List<InitialListModel> get initialListModelList {
-    if (_initialListModelList is EqualUnmodifiableListView)
-      return _initialListModelList;
+  List<NoteItemModel> get noteItemModelList {
+    if (_noteItemModelList is EqualUnmodifiableListView)
+      return _noteItemModelList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_initialListModelList);
+    return EqualUnmodifiableListView(_noteItemModelList);
   }
 
   @override
   String toString() {
-    return 'InitialListState(initialListModelList: $initialListModelList)';
+    return 'ItemsListviewState(noteItemModelList: $noteItemModelList)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_InitialListState &&
+            other is _$_ItemsListviewState &&
             const DeepCollectionEquality()
-                .equals(other._initialListModelList, _initialListModelList));
+                .equals(other._noteItemModelList, _noteItemModelList));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_initialListModelList));
+      runtimeType, const DeepCollectionEquality().hash(_noteItemModelList));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InitialListStateCopyWith<_$_InitialListState> get copyWith =>
-      __$$_InitialListStateCopyWithImpl<_$_InitialListState>(this, _$identity);
+  _$$_ItemsListviewStateCopyWith<_$_ItemsListviewState> get copyWith =>
+      __$$_ItemsListviewStateCopyWithImpl<_$_ItemsListviewState>(
+          this, _$identity);
 }
 
-abstract class _InitialListState implements InitialListState {
-  const factory _InitialListState(
-          {required final List<InitialListModel> initialListModelList}) =
-      _$_InitialListState;
+abstract class _ItemsListviewState implements ItemsListviewState {
+  const factory _ItemsListviewState(
+          {required final List<NoteItemModel> noteItemModelList}) =
+      _$_ItemsListviewState;
 
   @override
-  List<InitialListModel> get initialListModelList;
+  List<NoteItemModel> get noteItemModelList;
   @override
   @JsonKey(ignore: true)
-  _$$_InitialListStateCopyWith<_$_InitialListState> get copyWith =>
+  _$$_ItemsListviewStateCopyWith<_$_ItemsListviewState> get copyWith =>
       throw _privateConstructorUsedError;
 }

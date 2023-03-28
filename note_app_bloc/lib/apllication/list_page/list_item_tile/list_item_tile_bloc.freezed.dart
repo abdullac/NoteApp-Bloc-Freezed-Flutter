@@ -16,21 +16,20 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ListItemTileEvent {
-  InitialListModel get initialListModel => throw _privateConstructorUsedError;
+  NoteItemModel get initialListModel => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(InitialListModel initialListModel)
-        gotoNoteViewPage,
+    required TResult Function(NoteItemModel initialListModel) gotoNoteViewPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(InitialListModel initialListModel)? gotoNoteViewPage,
+    TResult? Function(NoteItemModel initialListModel)? gotoNoteViewPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(InitialListModel initialListModel)? gotoNoteViewPage,
+    TResult Function(NoteItemModel initialListModel)? gotoNoteViewPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,9 +61,9 @@ abstract class $ListItemTileEventCopyWith<$Res> {
           ListItemTileEvent value, $Res Function(ListItemTileEvent) then) =
       _$ListItemTileEventCopyWithImpl<$Res, ListItemTileEvent>;
   @useResult
-  $Res call({InitialListModel initialListModel});
+  $Res call({NoteItemModel initialListModel});
 
-  $InitialListModelCopyWith<$Res> get initialListModel;
+  $NoteItemModelCopyWith<$Res> get initialListModel;
 }
 
 /// @nodoc
@@ -86,14 +85,14 @@ class _$ListItemTileEventCopyWithImpl<$Res, $Val extends ListItemTileEvent>
       initialListModel: null == initialListModel
           ? _value.initialListModel
           : initialListModel // ignore: cast_nullable_to_non_nullable
-              as InitialListModel,
+              as NoteItemModel,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $InitialListModelCopyWith<$Res> get initialListModel {
-    return $InitialListModelCopyWith<$Res>(_value.initialListModel, (value) {
+  $NoteItemModelCopyWith<$Res> get initialListModel {
+    return $NoteItemModelCopyWith<$Res>(_value.initialListModel, (value) {
       return _then(_value.copyWith(initialListModel: value) as $Val);
     });
   }
@@ -107,10 +106,10 @@ abstract class _$$GotoNoteViewPageCopyWith<$Res>
       __$$GotoNoteViewPageCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({InitialListModel initialListModel});
+  $Res call({NoteItemModel initialListModel});
 
   @override
-  $InitialListModelCopyWith<$Res> get initialListModel;
+  $NoteItemModelCopyWith<$Res> get initialListModel;
 }
 
 /// @nodoc
@@ -130,7 +129,7 @@ class __$$GotoNoteViewPageCopyWithImpl<$Res>
       initialListModel: null == initialListModel
           ? _value.initialListModel
           : initialListModel // ignore: cast_nullable_to_non_nullable
-              as InitialListModel,
+              as NoteItemModel,
     ));
   }
 }
@@ -143,7 +142,7 @@ class _$GotoNoteViewPage
   const _$GotoNoteViewPage({required this.initialListModel});
 
   @override
-  final InitialListModel initialListModel;
+  final NoteItemModel initialListModel;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -179,8 +178,7 @@ class _$GotoNoteViewPage
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(InitialListModel initialListModel)
-        gotoNoteViewPage,
+    required TResult Function(NoteItemModel initialListModel) gotoNoteViewPage,
   }) {
     return gotoNoteViewPage(initialListModel);
   }
@@ -188,7 +186,7 @@ class _$GotoNoteViewPage
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(InitialListModel initialListModel)? gotoNoteViewPage,
+    TResult? Function(NoteItemModel initialListModel)? gotoNoteViewPage,
   }) {
     return gotoNoteViewPage?.call(initialListModel);
   }
@@ -196,7 +194,7 @@ class _$GotoNoteViewPage
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(InitialListModel initialListModel)? gotoNoteViewPage,
+    TResult Function(NoteItemModel initialListModel)? gotoNoteViewPage,
     required TResult orElse(),
   }) {
     if (gotoNoteViewPage != null) {
@@ -236,10 +234,10 @@ class _$GotoNoteViewPage
 
 abstract class GotoNoteViewPage implements ListItemTileEvent {
   const factory GotoNoteViewPage(
-      {required final InitialListModel initialListModel}) = _$GotoNoteViewPage;
+      {required final NoteItemModel initialListModel}) = _$GotoNoteViewPage;
 
   @override
-  InitialListModel get initialListModel;
+  NoteItemModel get initialListModel;
   @override
   @JsonKey(ignore: true)
   _$$GotoNoteViewPageCopyWith<_$GotoNoteViewPage> get copyWith =>

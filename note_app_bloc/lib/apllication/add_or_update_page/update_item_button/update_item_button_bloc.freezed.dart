@@ -16,20 +16,20 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UpdateItemButtonEvent {
-  InitialListModel get initialListModel => throw _privateConstructorUsedError;
+  NoteItemModel get noteItemModel => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(InitialListModel initialListModel) updateItem,
+    required TResult Function(NoteItemModel noteItemModel) updateItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(InitialListModel initialListModel)? updateItem,
+    TResult? Function(NoteItemModel noteItemModel)? updateItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(InitialListModel initialListModel)? updateItem,
+    TResult Function(NoteItemModel noteItemModel)? updateItem,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,9 +61,9 @@ abstract class $UpdateItemButtonEventCopyWith<$Res> {
           $Res Function(UpdateItemButtonEvent) then) =
       _$UpdateItemButtonEventCopyWithImpl<$Res, UpdateItemButtonEvent>;
   @useResult
-  $Res call({InitialListModel initialListModel});
+  $Res call({NoteItemModel noteItemModel});
 
-  $InitialListModelCopyWith<$Res> get initialListModel;
+  $NoteItemModelCopyWith<$Res> get noteItemModel;
 }
 
 /// @nodoc
@@ -80,21 +80,21 @@ class _$UpdateItemButtonEventCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? initialListModel = null,
+    Object? noteItemModel = null,
   }) {
     return _then(_value.copyWith(
-      initialListModel: null == initialListModel
-          ? _value.initialListModel
-          : initialListModel // ignore: cast_nullable_to_non_nullable
-              as InitialListModel,
+      noteItemModel: null == noteItemModel
+          ? _value.noteItemModel
+          : noteItemModel // ignore: cast_nullable_to_non_nullable
+              as NoteItemModel,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $InitialListModelCopyWith<$Res> get initialListModel {
-    return $InitialListModelCopyWith<$Res>(_value.initialListModel, (value) {
-      return _then(_value.copyWith(initialListModel: value) as $Val);
+  $NoteItemModelCopyWith<$Res> get noteItemModel {
+    return $NoteItemModelCopyWith<$Res>(_value.noteItemModel, (value) {
+      return _then(_value.copyWith(noteItemModel: value) as $Val);
     });
   }
 }
@@ -107,10 +107,10 @@ abstract class _$$UpdateItemCopyWith<$Res>
       __$$UpdateItemCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({InitialListModel initialListModel});
+  $Res call({NoteItemModel noteItemModel});
 
   @override
-  $InitialListModelCopyWith<$Res> get initialListModel;
+  $NoteItemModelCopyWith<$Res> get noteItemModel;
 }
 
 /// @nodoc
@@ -124,13 +124,13 @@ class __$$UpdateItemCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? initialListModel = null,
+    Object? noteItemModel = null,
   }) {
     return _then(_$UpdateItem(
-      initialListModel: null == initialListModel
-          ? _value.initialListModel
-          : initialListModel // ignore: cast_nullable_to_non_nullable
-              as InitialListModel,
+      noteItemModel: null == noteItemModel
+          ? _value.noteItemModel
+          : noteItemModel // ignore: cast_nullable_to_non_nullable
+              as NoteItemModel,
     ));
   }
 }
@@ -138,14 +138,14 @@ class __$$UpdateItemCopyWithImpl<$Res>
 /// @nodoc
 
 class _$UpdateItem implements UpdateItem {
-  const _$UpdateItem({required this.initialListModel});
+  const _$UpdateItem({required this.noteItemModel});
 
   @override
-  final InitialListModel initialListModel;
+  final NoteItemModel noteItemModel;
 
   @override
   String toString() {
-    return 'UpdateItemButtonEvent.updateItem(initialListModel: $initialListModel)';
+    return 'UpdateItemButtonEvent.updateItem(noteItemModel: $noteItemModel)';
   }
 
   @override
@@ -153,12 +153,12 @@ class _$UpdateItem implements UpdateItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UpdateItem &&
-            (identical(other.initialListModel, initialListModel) ||
-                other.initialListModel == initialListModel));
+            (identical(other.noteItemModel, noteItemModel) ||
+                other.noteItemModel == noteItemModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, initialListModel);
+  int get hashCode => Object.hash(runtimeType, noteItemModel);
 
   @JsonKey(ignore: true)
   @override
@@ -169,27 +169,27 @@ class _$UpdateItem implements UpdateItem {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(InitialListModel initialListModel) updateItem,
+    required TResult Function(NoteItemModel noteItemModel) updateItem,
   }) {
-    return updateItem(initialListModel);
+    return updateItem(noteItemModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(InitialListModel initialListModel)? updateItem,
+    TResult? Function(NoteItemModel noteItemModel)? updateItem,
   }) {
-    return updateItem?.call(initialListModel);
+    return updateItem?.call(noteItemModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(InitialListModel initialListModel)? updateItem,
+    TResult Function(NoteItemModel noteItemModel)? updateItem,
     required TResult orElse(),
   }) {
     if (updateItem != null) {
-      return updateItem(initialListModel);
+      return updateItem(noteItemModel);
     }
     return orElse();
   }
@@ -224,11 +224,11 @@ class _$UpdateItem implements UpdateItem {
 }
 
 abstract class UpdateItem implements UpdateItemButtonEvent {
-  const factory UpdateItem({required final InitialListModel initialListModel}) =
+  const factory UpdateItem({required final NoteItemModel noteItemModel}) =
       _$UpdateItem;
 
   @override
-  InitialListModel get initialListModel;
+  NoteItemModel get noteItemModel;
   @override
   @JsonKey(ignore: true)
   _$$UpdateItemCopyWith<_$UpdateItem> get copyWith =>

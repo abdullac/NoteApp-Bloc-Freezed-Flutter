@@ -17,10 +17,11 @@ class EditItemButtonBloc
       emit(state.copyWith(
         editPageWidget: null,
       ));
+      /// cals addOrUpdate for gets update page widget
       Widget editPageWidget = addOrUpdatePage(
-        // event.addOrEdit,
         event.initialListModel
       );
+      /// set update page widget to state
       emit(state.copyWith(
         editPageWidget: editPageWidget,
       ));

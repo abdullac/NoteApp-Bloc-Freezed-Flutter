@@ -5,8 +5,8 @@ part 'initial_list_model.freezed.dart';
 
 @freezed
 @HiveType(typeId: 1)
-class InitialListModel with _$InitialListModel{
-  const factory InitialListModel({
+class NoteItemModel with _$NoteItemModel{
+  const factory NoteItemModel({
     @HiveField(0)
     required int noteId,
     @HiveField(1)
@@ -15,21 +15,5 @@ class InitialListModel with _$InitialListModel{
     required String noteTitle,
     @HiveField(3)
     required String noteDescription,
-  }) = _InitialListModel;
+  }) = _NoteItemModel;
 } 
-
-// @HiveType(typeId: 1)
-// class InitialListModel extends HiveObject {
-//   @HiveField(0)
-//   final String noteDate;
-//   @HiveField(1)
-//   final String noteTitle;
-//   @HiveField(2)
-//   final String noteDescription;
-
-//   InitialListModel({
-//     required this.noteDate,
-//     required this.noteTitle,
-//     required this.noteDescription,
-//   });
-// }

@@ -17,20 +17,20 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$EditItemButtonEvent {
 // required AddOrEdit addOrEdit,
-  InitialListModel get initialListModel => throw _privateConstructorUsedError;
+  NoteItemModel get initialListModel => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(InitialListModel initialListModel) gotoEditPage,
+    required TResult Function(NoteItemModel initialListModel) gotoEditPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(InitialListModel initialListModel)? gotoEditPage,
+    TResult? Function(NoteItemModel initialListModel)? gotoEditPage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(InitialListModel initialListModel)? gotoEditPage,
+    TResult Function(NoteItemModel initialListModel)? gotoEditPage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,9 +62,9 @@ abstract class $EditItemButtonEventCopyWith<$Res> {
           EditItemButtonEvent value, $Res Function(EditItemButtonEvent) then) =
       _$EditItemButtonEventCopyWithImpl<$Res, EditItemButtonEvent>;
   @useResult
-  $Res call({InitialListModel initialListModel});
+  $Res call({NoteItemModel initialListModel});
 
-  $InitialListModelCopyWith<$Res> get initialListModel;
+  $NoteItemModelCopyWith<$Res> get initialListModel;
 }
 
 /// @nodoc
@@ -86,14 +86,14 @@ class _$EditItemButtonEventCopyWithImpl<$Res, $Val extends EditItemButtonEvent>
       initialListModel: null == initialListModel
           ? _value.initialListModel
           : initialListModel // ignore: cast_nullable_to_non_nullable
-              as InitialListModel,
+              as NoteItemModel,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $InitialListModelCopyWith<$Res> get initialListModel {
-    return $InitialListModelCopyWith<$Res>(_value.initialListModel, (value) {
+  $NoteItemModelCopyWith<$Res> get initialListModel {
+    return $NoteItemModelCopyWith<$Res>(_value.initialListModel, (value) {
       return _then(_value.copyWith(initialListModel: value) as $Val);
     });
   }
@@ -107,10 +107,10 @@ abstract class _$$GotoEditPageCopyWith<$Res>
       __$$GotoEditPageCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({InitialListModel initialListModel});
+  $Res call({NoteItemModel initialListModel});
 
   @override
-  $InitialListModelCopyWith<$Res> get initialListModel;
+  $NoteItemModelCopyWith<$Res> get initialListModel;
 }
 
 /// @nodoc
@@ -130,7 +130,7 @@ class __$$GotoEditPageCopyWithImpl<$Res>
       initialListModel: null == initialListModel
           ? _value.initialListModel
           : initialListModel // ignore: cast_nullable_to_non_nullable
-              as InitialListModel,
+              as NoteItemModel,
     ));
   }
 }
@@ -142,7 +142,7 @@ class _$GotoEditPage implements GotoEditPage {
 
 // required AddOrEdit addOrEdit,
   @override
-  final InitialListModel initialListModel;
+  final NoteItemModel initialListModel;
 
   @override
   String toString() {
@@ -170,7 +170,7 @@ class _$GotoEditPage implements GotoEditPage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(InitialListModel initialListModel) gotoEditPage,
+    required TResult Function(NoteItemModel initialListModel) gotoEditPage,
   }) {
     return gotoEditPage(initialListModel);
   }
@@ -178,7 +178,7 @@ class _$GotoEditPage implements GotoEditPage {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(InitialListModel initialListModel)? gotoEditPage,
+    TResult? Function(NoteItemModel initialListModel)? gotoEditPage,
   }) {
     return gotoEditPage?.call(initialListModel);
   }
@@ -186,7 +186,7 @@ class _$GotoEditPage implements GotoEditPage {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(InitialListModel initialListModel)? gotoEditPage,
+    TResult Function(NoteItemModel initialListModel)? gotoEditPage,
     required TResult orElse(),
   }) {
     if (gotoEditPage != null) {
@@ -225,11 +225,11 @@ class _$GotoEditPage implements GotoEditPage {
 }
 
 abstract class GotoEditPage implements EditItemButtonEvent {
-  const factory GotoEditPage(
-      {required final InitialListModel initialListModel}) = _$GotoEditPage;
+  const factory GotoEditPage({required final NoteItemModel initialListModel}) =
+      _$GotoEditPage;
 
   @override // required AddOrEdit addOrEdit,
-  InitialListModel get initialListModel;
+  NoteItemModel get initialListModel;
   @override
   @JsonKey(ignore: true)
   _$$GotoEditPageCopyWith<_$GotoEditPage> get copyWith =>

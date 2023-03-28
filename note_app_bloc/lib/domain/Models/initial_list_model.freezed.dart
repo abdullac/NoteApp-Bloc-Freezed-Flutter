@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$InitialListModel {
+mixin _$NoteItemModel {
   @HiveField(0)
   int get noteId => throw _privateConstructorUsedError;
   @HiveField(1)
@@ -26,15 +26,15 @@ mixin _$InitialListModel {
   String get noteDescription => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $InitialListModelCopyWith<InitialListModel> get copyWith =>
+  $NoteItemModelCopyWith<NoteItemModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $InitialListModelCopyWith<$Res> {
-  factory $InitialListModelCopyWith(
-          InitialListModel value, $Res Function(InitialListModel) then) =
-      _$InitialListModelCopyWithImpl<$Res, InitialListModel>;
+abstract class $NoteItemModelCopyWith<$Res> {
+  factory $NoteItemModelCopyWith(
+          NoteItemModel value, $Res Function(NoteItemModel) then) =
+      _$NoteItemModelCopyWithImpl<$Res, NoteItemModel>;
   @useResult
   $Res call(
       {@HiveField(0) int noteId,
@@ -44,9 +44,9 @@ abstract class $InitialListModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$InitialListModelCopyWithImpl<$Res, $Val extends InitialListModel>
-    implements $InitialListModelCopyWith<$Res> {
-  _$InitialListModelCopyWithImpl(this._value, this._then);
+class _$NoteItemModelCopyWithImpl<$Res, $Val extends NoteItemModel>
+    implements $NoteItemModelCopyWith<$Res> {
+  _$NoteItemModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -83,11 +83,11 @@ class _$InitialListModelCopyWithImpl<$Res, $Val extends InitialListModel>
 }
 
 /// @nodoc
-abstract class _$$_InitialListModelCopyWith<$Res>
-    implements $InitialListModelCopyWith<$Res> {
-  factory _$$_InitialListModelCopyWith(
-          _$_InitialListModel value, $Res Function(_$_InitialListModel) then) =
-      __$$_InitialListModelCopyWithImpl<$Res>;
+abstract class _$$_NoteItemModelCopyWith<$Res>
+    implements $NoteItemModelCopyWith<$Res> {
+  factory _$$_NoteItemModelCopyWith(
+          _$_NoteItemModel value, $Res Function(_$_NoteItemModel) then) =
+      __$$_NoteItemModelCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -98,11 +98,11 @@ abstract class _$$_InitialListModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_InitialListModelCopyWithImpl<$Res>
-    extends _$InitialListModelCopyWithImpl<$Res, _$_InitialListModel>
-    implements _$$_InitialListModelCopyWith<$Res> {
-  __$$_InitialListModelCopyWithImpl(
-      _$_InitialListModel _value, $Res Function(_$_InitialListModel) _then)
+class __$$_NoteItemModelCopyWithImpl<$Res>
+    extends _$NoteItemModelCopyWithImpl<$Res, _$_NoteItemModel>
+    implements _$$_NoteItemModelCopyWith<$Res> {
+  __$$_NoteItemModelCopyWithImpl(
+      _$_NoteItemModel _value, $Res Function(_$_NoteItemModel) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -113,7 +113,7 @@ class __$$_InitialListModelCopyWithImpl<$Res>
     Object? noteTitle = null,
     Object? noteDescription = null,
   }) {
-    return _then(_$_InitialListModel(
+    return _then(_$_NoteItemModel(
       noteId: null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
@@ -136,8 +136,8 @@ class __$$_InitialListModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_InitialListModel implements _InitialListModel {
-  const _$_InitialListModel(
+class _$_NoteItemModel implements _NoteItemModel {
+  const _$_NoteItemModel(
       {@HiveField(0) required this.noteId,
       @HiveField(1) required this.noteDate,
       @HiveField(2) required this.noteTitle,
@@ -158,14 +158,14 @@ class _$_InitialListModel implements _InitialListModel {
 
   @override
   String toString() {
-    return 'InitialListModel(noteId: $noteId, noteDate: $noteDate, noteTitle: $noteTitle, noteDescription: $noteDescription)';
+    return 'NoteItemModel(noteId: $noteId, noteDate: $noteDate, noteTitle: $noteTitle, noteDescription: $noteDescription)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_InitialListModel &&
+            other is _$_NoteItemModel &&
             (identical(other.noteId, noteId) || other.noteId == noteId) &&
             (identical(other.noteDate, noteDate) ||
                 other.noteDate == noteDate) &&
@@ -182,17 +182,16 @@ class _$_InitialListModel implements _InitialListModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InitialListModelCopyWith<_$_InitialListModel> get copyWith =>
-      __$$_InitialListModelCopyWithImpl<_$_InitialListModel>(this, _$identity);
+  _$$_NoteItemModelCopyWith<_$_NoteItemModel> get copyWith =>
+      __$$_NoteItemModelCopyWithImpl<_$_NoteItemModel>(this, _$identity);
 }
 
-abstract class _InitialListModel implements InitialListModel {
-  const factory _InitialListModel(
-          {@HiveField(0) required final int noteId,
-          @HiveField(1) required final String noteDate,
-          @HiveField(2) required final String noteTitle,
-          @HiveField(3) required final String noteDescription}) =
-      _$_InitialListModel;
+abstract class _NoteItemModel implements NoteItemModel {
+  const factory _NoteItemModel(
+      {@HiveField(0) required final int noteId,
+      @HiveField(1) required final String noteDate,
+      @HiveField(2) required final String noteTitle,
+      @HiveField(3) required final String noteDescription}) = _$_NoteItemModel;
 
   @override
   @HiveField(0)
@@ -208,6 +207,6 @@ abstract class _InitialListModel implements InitialListModel {
   String get noteDescription;
   @override
   @JsonKey(ignore: true)
-  _$$_InitialListModelCopyWith<_$_InitialListModel> get copyWith =>
+  _$$_NoteItemModelCopyWith<_$_NoteItemModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

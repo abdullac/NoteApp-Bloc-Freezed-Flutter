@@ -14,7 +14,9 @@ class ListItemTileBloc extends Bloc<ListItemTileEvent, ListItemTileState> {
   ListItemTileBloc() : super(ListItemTileState.initial()) {
     on<GotoNoteViewPage>((event, emit) {
       emit(state.copyWith(noteViewPageWidget: null));
+      /// calls noteViewPage for get note view page widget
       var noteViewPageWidget = noteViewPage(event.initialListModel);
+      /// set not view page widget to state
       emit(state.copyWith(noteViewPageWidget: noteViewPageWidget));
     });
   }

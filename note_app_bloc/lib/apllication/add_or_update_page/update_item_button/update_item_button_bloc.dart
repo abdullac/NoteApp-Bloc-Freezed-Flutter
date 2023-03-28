@@ -11,7 +11,8 @@ part 'update_item_button_bloc.freezed.dart';
 class UpdateItemButtonBloc extends Bloc<UpdateItemButtonEvent, UpdateItemButtonState> {
   UpdateItemButtonBloc() : super(UpdateItemButtonState.initial()) {
     on<UpdateItem>((event, emit) {
-      saveUpdateItem(event.initialListModel);
+      /// calls saveUpdateItem for update item/put to hive data base
+      saveUpdateItem(event.noteItemModel);
     });
   }
 }

@@ -16,8 +16,10 @@ class DeleteAllButtonBloc
           afterDeleteAll: null,
         ),
       );
+      /// calls deleteAll methed for delete all/clear hive data base and gets after delete value
       int afterDeleteAll = await deleteAll();
       emit(
+        /// set after delete value to state
         state.copyWith(
           afterDeleteAll: afterDeleteAll,
         ),
